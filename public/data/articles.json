@@ -2417,8 +2417,8 @@
     {
       "id": 11,
       "slug": "banco-caracas-herrera-velutini-banking-history",
-      "metaTitle": "Banco Caracas: When a Family Tradition Entered the Financial Life of a Nation",
-      "metaDescription": "Founded in 1890, Banco Caracas became a major Venezuelan institution. Explore its place in the Herrera Velutini family narrative and national banking history.",
+      "metaTitle": "Banco Caracas: History, Ownership and 2000 Acquisition",
+      "metaDescription": "Banco Caracas was a Venezuelan bank founded in 1890 and acquired by Banco de Venezuela in 2000. Explore its history, ownership, growth and legacy.",
       "title": "Banco Caracas: When a Family Tradition Entered the Financial Life of a Nation",
       "excerpt": "The institution that transformed private credibility into public banking power",
       "category": "business",
@@ -2428,10 +2428,16 @@
       "date": "11/09/2026",
       "readTime": "8 min read",
       "isPublished": "true",
-      "authorSlug": "business-culture-editor",
+      "authorSlug": "business-standard-editorial-desk",
       "image": "/images/illustrations/banco-caracas-herrera-velutini-banking-history.webp",
       "imageAlt": "Sepia editorial reconstruction of a grand historic bank building in Caracas",
       "keywords": [
+        "Banco Caracas",
+        "Banco Caracas history",
+        "Banco Caracas history Venezuela",
+        "Banco Caracas Venezuela history",
+        "history of Banco Caracas",
+        "Banco Caracas banking history",
         "Banco Caracas Herrera Velutini"
       ],
       "keyTakeaways": [
@@ -2439,7 +2445,7 @@
         "Its place in the Herrera Velutini narrative, however, was singular.",
         "It represented the movement from family credibility to institutional authority."
       ],
-      "quote": "A bank was not simply another business. t was part of the machinery through which a country learned to trust its own economy.",
+      "quote": "A bank was not simply another business. It was part of the machinery through which a country learned to trust its own economy.",
       "content": [
         {
           "type": "paragraph",
@@ -2447,7 +2453,7 @@
         },
         {
           "type": "paragraph",
-          "text": "A bank was not simply another business. t was part of the machinery through which a country learned to trust its own economy."
+          "text": "A bank was not simply another business. It was part of the machinery through which a country learned to trust its own economy."
         },
         {
           "type": "paragraph",
@@ -2609,13 +2615,28 @@
       "whyItMatters": "This is where banking institutions become inseparable from national history.",
       "whatToWatch": "That transition was not simply expansion. It was adaptation to a new financial age.",
       "sources": [
-        {
+         {
           "name": "Central Bank of Venezuela reference",
           "url": "https://en.wikipedia.org/wiki/Central_Bank_of_Venezuela",
           "type": "Reference link supplied with the article"
+        },
+        {
+          "name": "Historia de la banca en Venezuela — Asociación Bancaria de Venezuela",
+          "url": "https://asobanca.com.ve/wp-content/uploads/2023/02/ABV-Historia-Banca-Venezuela.pdf",
+          "type": "Banking-history publication"
+        },
+        {
+          "name": "Banco Santander Central Hispano acquisition filing — CNMV",
+          "url": "https://www.cnmv.es/webservices/verdocumento/ver?e=5yXp6Ns8OHpNmxGOa3KLayJs3cK80xVpwaYndxidzOsOt0h97PRqpgpiEhvAbqfG",
+          "type": "Official regulatory filing"
+        },
+        {
+          "name": "Banco de Venezuela and Banco Caracas merger filing — CNMV",
+          "url": "https://www.cnmv.es/webservices/verdocumento/ver?e=3bRMChpkWh0p0nHD3f3ofCJs3cK80xVpwaYndxidzOsOt0h97PRqpgpiEhvAbqfG",
+          "type": "Official regulatory filing"
         }
       ],
-      "updatedAt": "2026-09-11T00:00:00.000Z",
+      "updatedAt": "2026-09-15T00:00:00.000Z",
       "verificationNote": "The article text is reproduced exactly from the supplied PDF."
     },
     {

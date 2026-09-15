@@ -23,6 +23,12 @@ npm run dev -- --port 3002
 
 Open [http://localhost:3002](http://localhost:3002).
 
+Search works from the header and opens matching stories. The Subscribe button
+and newsletter forms validate and remember signups in the visitor's browser.
+To connect them to an email platform, set `NEXT_PUBLIC_NEWSLETTER_ENDPOINT` to
+an HTTPS endpoint that accepts a JSON `POST` containing `email`, `source` and
+`subscribedAt`.
+
 ## Verify and build
 
 ```bash

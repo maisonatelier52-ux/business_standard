@@ -3,37 +3,42 @@
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { navCategories, siteConfig } from "@/lib/site";
+import { submitNewsletterSignup, validateNewsletterEmail } from "@/lib/newsletter";
 import { categoryUrlSlug } from "@/data/news";
 import { SocialIcon } from "./SocialIcon";
-
-// A Gmail address is required: something@gmail.com (case-insensitive on the domain).
-const GMAIL_PATTERN = /^[^\s@]+@gmail\.com$/i;
 
 function SubscribeModal({ onClose }) {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [connected, setConnected] = useState(false);
   const inputRef = useRef(null);
 
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    const trimmed = email.trim();
-
-    if (!trimmed) {
-      setError("Please enter your email address.");
-      return;
-    }
-    if (!GMAIL_PATTERN.test(trimmed)) {
-      setError("Please enter a valid Gmail address (it must end with @gmail.com).");
+    const validation = validateNewsletterEmail(email);
+    if (validation.error) {
+      setError(validation.error);
       return;
     }
 
     setError("");
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      const result = await submitNewsletterSignup(validation.email, "header");
+      setEmail(result.email);
+      setConnected(result.connected);
+      setSubmitted(true);
+    } catch (submissionError) {
+      setError(submissionError.message || "We could not complete your subscription. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -64,7 +69,7 @@ function SubscribeModal({ onClose }) {
               Subscribe to Business Standard
             </h2>
             <p className="mt-[10px] mb-[20px] text-[#6f6966] text-[13px] leading-[1.6]">
-              Get source-reviewed reporting delivered to your inbox. Enter your Gmail
+              Get source-reviewed reporting delivered to your inbox. Enter your email
               address to get started.
             </p>
 
@@ -83,7 +88,7 @@ function SubscribeModal({ onClose }) {
                   setEmail(event.target.value);
                   if (error) setError("");
                 }}
-                placeholder="yourname@gmail.com"
+                placeholder="you@example.com"
                 aria-invalid={Boolean(error)}
                 aria-describedby={error ? "subscribe-email-error" : undefined}
                 className={`w-full border px-[14px] py-[12px] text-[15px] outline-none bg-white ${
@@ -98,9 +103,10 @@ function SubscribeModal({ onClose }) {
 
               <button
                 type="submit"
+                disabled={submitting}
                 className="w-full mt-[16px] bg-[#10263b] !text-white text-[13px] font-medium uppercase tracking-[.08em] px-[18px] py-[13px] rounded-[2px] hover:bg-[#7a1f2b] cursor-pointer"
               >
-                Subscribe
+                {submitting ? "Subscribing…" : "Subscribe"}
               </button>
             </form>
           </>
@@ -113,7 +119,8 @@ function SubscribeModal({ onClose }) {
               You&apos;re subscribed
             </h2>
             <p className="mt-[10px] text-[#6f6966] text-[13px] leading-[1.6]">
-              We&apos;ll send new stories to <strong className="text-[#171515]">{email.trim()}</strong>.
+              {connected ? "New stories will be sent to " : "Your signup has been saved for "}
+              <strong className="text-[#171515]">{email.trim()}</strong>.
             </p>
             <button
               type="button"
@@ -129,7 +136,7 @@ function SubscribeModal({ onClose }) {
   );
 }
 
-export function Header({ searchItems }) {
+export function Header({ searchItems = [] }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [subscribeOpen, setSubscribeOpen] = useState(false);
@@ -155,12 +162,19 @@ export function Header({ searchItems }) {
   const results = useMemo(() => {
     const needle = query.trim().toLowerCase();
     if (needle.length < 2) return [];
+    const terms = needle.split(/\s+/).filter(Boolean);
     return searchItems
-      .filter((item) =>
-        `${item.title} ${item.summary} ${item.category}`.toLowerCase().includes(needle),
-      )
+      .filter((item) => {
+        const searchable = `${item.title} ${item.summary} ${item.category} ${item.searchText || ""}`.toLowerCase();
+        return terms.every((term) => searchable.includes(term));
+      })
       .slice(0, 7);
   }, [query, searchItems]);
+
+  function openResult(item) {
+    setSearchOpen(false);
+    window.location.assign(`/${categoryUrlSlug(item.category)}/${item.slug}`);
+  }
 
   const dateLabel = new Intl.DateTimeFormat("en", {
     weekday: "long",
@@ -241,7 +255,13 @@ export function Header({ searchItems }) {
               <span className="font-bold font-['Georgia','Times_New_Roman',serif] text-[13px] uppercase tracking-[.15em]">Search Business Standard</span>
               <button className="border-0 bg-transparent cursor-pointer" onClick={() => setSearchOpen(false)} aria-label="Close search"><SocialIcon name="close" size={22} /></button>
             </div>
-            <div className="flex items-center gap-[12px] px-[3px] pb-[12px] border-b-2 border-[#171515]">
+            <form
+              className="flex items-center gap-[12px] px-[3px] pb-[12px] border-b-2 border-[#171515]"
+              onSubmit={(event) => {
+                event.preventDefault();
+                if (results[0]) openResult(results[0]);
+              }}
+            >
               <SocialIcon name="search" size={22} />
               <input
                 ref={inputRef}
@@ -251,7 +271,8 @@ export function Header({ searchItems }) {
                 aria-label="Search query"
                 className="flex-1 border-0 outline-none bg-transparent font-['Georgia','Times_New_Roman',serif] text-[28px] max-[780px]:text-[20px] min-w-0"
               />
-            </div>
+              <button type="submit" className="sr-only" disabled={results.length === 0}>Open first search result</button>
+            </form>
             <div className="pt-[10px]" aria-live="polite">
               {query.trim().length < 2 && <p className="text-[#6f6966] text-[14px]">Type at least two characters to search.</p>}
               {query.trim().length >= 2 && results.length === 0 && <p className="text-[#6f6966] text-[14px]">No posts found. Try another term.</p>}

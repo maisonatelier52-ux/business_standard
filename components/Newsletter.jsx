@@ -1,21 +1,42 @@
 "use client";
 
 import { useState } from "react";
+import { submitNewsletterSignup, validateNewsletterEmail } from "@/lib/newsletter";
 import { SocialIcon } from "./SocialIcon";
 
 export function Newsletter({ compact = false }) {
   const [message, setMessage] = useState("");
+  const [isError, setIsError] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  function submit(event) {
+  async function submit(event) {
     event.preventDefault();
     const form = event.currentTarget;
-    const email = new FormData(form).get("email")?.toString().trim();
-    if (!email || !email.includes("@")) {
-      setMessage("Please enter a valid email address.");
+    const value = new FormData(form).get("email")?.toString() || "";
+    const validation = validateNewsletterEmail(value);
+    if (validation.error) {
+      setIsError(true);
+      setMessage(validation.error);
       return;
     }
-    setMessage("Preview confirmed — no address was stored.");
-    form.reset();
+
+    setIsError(false);
+    setMessage("");
+    setSubmitting(true);
+    try {
+      const result = await submitNewsletterSignup(validation.email, compact ? "category-sidebar" : "newsletter");
+      setMessage(
+        result.connected
+          ? `You're subscribed. New stories will be sent to ${result.email}.`
+          : `Subscription saved for ${result.email}.`,
+      );
+      form.reset();
+    } catch (submissionError) {
+      setIsError(true);
+      setMessage(submissionError.message || "We could not complete your subscription. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -44,7 +65,7 @@ export function Newsletter({ compact = false }) {
           Follow the blog by email
         </h2>
         <p className={`m-0 text-[#eadcdf] text-[13px] font-['Georgia','Times_New_Roman',serif] ${compact ? "leading-[1.5] mb-[18px]" : ""}`}>
-          Preview the signup experience. This prototype validates the address locally and does not store or send it.
+          Enter your email to subscribe to source-reviewed reporting and new story alerts.
         </p>
       </div>
       <form
@@ -61,24 +82,28 @@ export function Newsletter({ compact = false }) {
           id={compact ? "sidebar-email" : "newsletter-email"}
           name="email"
           type="email"
+          inputMode="email"
+          autoComplete="email"
+          required
           placeholder="Your email address"
           className={`min-w-0 h-[46px] px-[14px] border border-white/65 bg-white text-[#171515] outline-none ${compact ? "w-full" : ""}`}
         />
         <button
           type="submit"
+          disabled={submitting}
           className={`border border-white bg-transparent text-white px-[20px] cursor-pointer hover:bg-gray-700 hover:text-black ${
             compact ? "w-full h-[44px] mt-[8px]" : "h-[46px]"
           }`}
         >
-          Check address
+          {submitting ? "Subscribing…" : "Subscribe"}
         </button>
         {message && (
           <small
             role="status"
             className={
               compact
-                ? "block mt-[8px] text-[#f6dadd]"
-                : "absolute top-[calc(100%+5px)] left-0 text-[#f6dadd]"
+                ? `block mt-[8px] ${isError ? "text-[#ffd2d7]" : "text-white"}`
+                : `absolute top-[calc(100%+5px)] left-0 ${isError ? "text-[#ffd2d7]" : "text-white"}`
             }
           >
             {message}

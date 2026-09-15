@@ -65,6 +65,17 @@
       "bio": "The Sources & Standards Editor maintains sourcing, update and correction practices across the blog and reviews consequential legal and accountability analysis against the public record.",
       "social": {},
       "kind": "editorial_team"
+    },
+    {
+      "slug": "business-standard-editorial-desk",
+      "name": "Business Standard Editorial Desk",
+      "role": "Editorial team",
+      "beat": "Business history, banking and institutional change",
+      "location": "Independent publication",
+      "image": "/images/editors/business-culture-editor.webp",
+      "bio": "The Business Standard Editorial Desk prepares sourced features and explainers using public records, institutional histories and regulatory documents, with visible references and correction standards.",
+      "social": {},
+      "kind": "editorial_team"
     }
   ]
 }

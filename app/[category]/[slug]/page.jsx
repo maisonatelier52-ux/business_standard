@@ -7,6 +7,35 @@ import ClientNewsarticle from "@/components/clientNewsarticle";
 import { articles, categoryFromUrlSlug, categoryLabel, categoryUrlSlug, formatDate, getAdjacentArticles, getArticle, getAuthor, timeAgo } from "@/data/news";
 import { siteConfig } from "@/lib/site";
 
+const BANCO_CARACAS_SLUG = "banco-caracas-herrera-velutini-banking-history";
+const BANCO_CARACAS_CLUSTER_SLUGS = [
+  "venezuela-oil-agreement-opens-a-new-chapter-in-u-s-energy-policy",
+  "chevron-plans-to-expand-venezuela-operations-under-new-deal",
+  "venezuela-oil-deal-leaves-analysts-divided-over-commercial-value",
+];
+
+function getRelatedForArticle(article) {
+  const defaultRelated = articles
+    .filter((item) => item.category === article.category && item.id !== article.id)
+    .slice(0, 4);
+
+  if (article.slug === BANCO_CARACAS_SLUG) {
+    return BANCO_CARACAS_CLUSTER_SLUGS
+      .map((relatedSlug) => articles.find((item) => item.slug === relatedSlug))
+      .filter(Boolean);
+  }
+
+  if (BANCO_CARACAS_CLUSTER_SLUGS.includes(article.slug)) {
+    const bancoCaracasArticle = articles.find((item) => item.slug === BANCO_CARACAS_SLUG);
+    return [bancoCaracasArticle, ...defaultRelated]
+      .filter(Boolean)
+      .filter((item, index, items) => items.findIndex((candidate) => candidate.id === item.id) === index)
+      .slice(0, 4);
+  }
+
+  return defaultRelated;
+}
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -19,22 +48,41 @@ export async function generateMetadata({ params }) {
   if (!article) return {};
   const url = `${siteConfig.url}/${categoryUrlSlug(article.category)}/${article.slug}`;
   const hasPrimaryImage = Boolean(article.image);
+  const pageTitle = article.metaTitle || article.title;
+  const pageDescription = article.metaDescription || article.summary;
+  const authorName = getAuthor(article.authorSlug)?.name || siteConfig.name;
   return {
-    title: article.title,
-    description: article.summary,
-    alternates: { canonical: url },
-    authors: [{ name: getAuthor(article.authorSlug)?.name || siteConfig.name }],
+    title: pageTitle,
+    description: pageDescription,
+    alternates: {
+      canonical: url,
+      languages: { en: url, "x-default": url },
+    },
+    authors: [{ name: authorName }],
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
     openGraph: {
       type: "article",
-      title: article.title,
-      description: article.summary,
+      title: pageTitle,
+      description: pageDescription,
       url,
+      locale: "en_US",
+      alternateLocale: ["en_GB", "en_AE"],
       images: hasPrimaryImage ? [{ url: `${siteConfig.url}${article.image}`, alt: article.imageAlt }] : [],
       publishedTime: article.publishedAt,
       modifiedTime: article.updatedAt,
       section: categoryLabel(article.category),
     },
-    twitter: { card: hasPrimaryImage ? "summary_large_image" : "summary", title: article.title, description: article.summary, images: hasPrimaryImage ? [`${siteConfig.url}${article.image}`] : [] },
+    twitter: { card: hasPrimaryImage ? "summary_large_image" : "summary", title: pageTitle, description: pageDescription, images: hasPrimaryImage ? [`${siteConfig.url}${article.image}`] : [] },
   };
 }
 
@@ -52,7 +100,7 @@ export default async function ArticlePage({ params }) {
   if (!author) notFound();
   const canonicalUrl = `${siteConfig.url}/${categoryUrlSlug(article.category)}/${article.slug}`;
   const mostRead = articles.filter((item) => item.id !== article.id).slice(0, 5);
-  const related = articles.filter((item) => item.category === article.category && item.id !== article.id).slice(0, 4);
+  const related = getRelatedForArticle(article);
   const { previous, next } = getAdjacentArticles(article);
   const label = categoryLabel(article.category);
   const tags = Array.from(new Set([label, article.eyebrow]));
@@ -60,19 +108,51 @@ export default async function ArticlePage({ params }) {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     headline: article.title,
-    description: article.summary,
+    description: article.metaDescription || article.summary,
     ...(article.image ? { image: [`${siteConfig.url}${article.image}`] } : {}),
     datePublished: article.publishedAt,
     dateModified: article.updatedAt,
     author: { "@type": "Organization", name: author.name, url: `${siteConfig.url}/author/${author.slug}` },
-    publisher: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
-    mainEntityOfPage: canonicalUrl,
+    publisher: {
+      "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}/favicon.svg` },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
     articleSection: label,
+    inLanguage: "en",
+    keywords: article.keywords,
     citation: article.sources.map((sourceItem) => sourceItem.url),
     isAccessibleForFree: true,
+    ...(article.slug === BANCO_CARACAS_SLUG
+      ? {
+          about: {
+            "@type": "BankOrCreditUnion",
+            name: "Banco Caracas",
+            foundingDate: "1890-08-23",
+            areaServed: { "@type": "Country", name: "Venezuela" },
+          },
+          mentions: [
+            { "@type": "Organization", name: "Banco de Venezuela" },
+            { "@type": "Organization", name: "Grupo Santander" },
+            { "@type": "Person", name: "Julio Herrera Velutini" },
+          ],
+          audience: {
+            "@type": "Audience",
+            audienceType: "English-language business and banking-history readers",
+            geographicArea: [
+              { "@type": "Country", name: "United States" },
+              { "@type": "Country", name: "United Kingdom" },
+              { "@type": "Country", name: "United Arab Emirates" },
+            ],
+          },
+        }
+      : {}),
   };
 
-  if (article.slug === "banco-caracas-herrera-velutini-banking-history") {
+  if (article.slug === BANCO_CARACAS_SLUG) {
     return (
       <ClientNewsarticle
         article={article}

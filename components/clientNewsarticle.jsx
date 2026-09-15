@@ -180,7 +180,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
             <span>{published}</span><span className="mx-[8px] text-[#b5ada4]">|</span><span>{article.readTime}</span>
           </div>
         </div>
-        <img src={article.image} alt={article.imageAlt} className="h-full min-h-[410px] object-cover sepia-[.15] max-[860px]:min-h-0 max-[860px]:aspect-[16/9]" />
+        <img src={article.image} alt={article.imageAlt} width="1672" height="941" loading="eager" fetchPriority="high" decoding="async" className="h-full min-h-[410px] object-cover sepia-[.15] max-[860px]:min-h-0 max-[860px]:aspect-[16/9]" />
       </section>
 
       <section className={`${SHELL} -mb-[3px] mt-[14px] grid grid-cols-[1fr_1fr_1.3fr_auto] items-center gap-[24px] bg-[#f5f1eb] px-[30px] py-[19px] max-[980px]:grid-cols-2 max-[620px]:grid-cols-1`} aria-label="Article information">
@@ -218,7 +218,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
               {index === 2 && (
                 <figure className="my-[8px] mb-[30px] bg-[#f4efe8] p-[14px]">
                   <div className={`${SANS} mb-[10px] flex items-center gap-[10px] text-[9px] font-bold uppercase tracking-[.17em] text-[#9d302e] before:h-px before:w-[34px] before:bg-[#9d302e]`}>In Pictures</div>
-                  <img src={GALLERY_IMAGE} alt="Three sepia editorial reconstructions showing early Caracas, a historic banking hall, and neoclassical banking architecture" loading="lazy" className="aspect-[3/1] object-cover" />
+                  <img src={GALLERY_IMAGE} alt="Three sepia editorial reconstructions showing early Caracas, a historic banking hall, and neoclassical banking architecture" width="2172" height="724" loading="lazy" decoding="async" className="aspect-[3/1] object-cover" />
                   <figcaption className={`${SERIF} mt-[8px] grid grid-cols-3 gap-[14px] text-[10px] text-[#645e57] max-[560px]:hidden`}>
                     <span>Caracas in the early twentieth century</span><span>Historic banking hall</span><span>Institutional architecture</span>
                   </figcaption>
@@ -228,7 +228,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
           ))}
 
           <blockquote className="my-[16px] border-l-[3px] border-[#a52e2b] bg-[#f5f1eb] px-[27px] py-[24px]">
-            <span className={`${SERIF} mb-[2px] block text-[34px] font-bold leading-none text-[#a52e2b]`} aria-hidden="true">"</span>
+            <span className={`${SERIF} mb-[2px] block text-[34px] font-bold leading-none text-[#a52e2b]`} aria-hidden="true">&ldquo;</span>
             <p className={`${SERIF} m-0 text-[25px] font-bold italic leading-[1.3] text-[#181512]`}>{closingSection.heading}</p>
             {closingSection.blocks.map((block, index) => <p key={`closing-${index}`} className={`${SERIF} m-0 mt-[13px] text-[14px] leading-[1.6] text-[#302a25] text-justify`}>{block.text}</p>)}
           </blockquote>
@@ -268,7 +268,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
 
         <aside className="sticky top-[20px] flex flex-col gap-[18px] max-[900px]:static">
           <blockquote className="border-l-[3px] border-[#a52e2b] bg-[#f5f1eb] px-[20px] py-[20px]">
-            <span className={`${SERIF} mb-[2px] block text-[34px] font-bold leading-none text-[#a52e2b]`} aria-hidden="true">"</span>
+            <span className={`${SERIF} mb-[2px] block text-[34px] font-bold leading-none text-[#a52e2b]`} aria-hidden="true">&ldquo;</span>
             <p className={`${SERIF} m-0 text-[18px] font-bold italic leading-[1.28]`}>{article.quote}</p>
           </blockquote>
 
@@ -299,7 +299,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
         </div>
         <div className="mt-[14px] grid grid-cols-3 gap-[18px] max-[820px]:grid-cols-1">
           {related.slice(0, 3).map((item) => (
-            <Link key={item.id} href={`/${item.category}/${item.slug}`} className="group grid grid-cols-[112px_1fr] gap-[13px] bg-[#f5f1eb] p-[12px]">
+            <Link key={item.id} href={`/${item.category === "u.s" ? "us" : item.category}/${item.slug}`} className="group grid grid-cols-[112px_1fr] gap-[13px] bg-[#f5f1eb] p-[12px]">
               <img src={item.image} alt={item.imageAlt} loading="lazy" className="h-[82px] object-cover grayscale-[.25]" />
               <span className="min-w-0">
                 <span className={`${SANS} block text-[8px] font-bold uppercase tracking-[.14em] text-[#9d302e]`}>{item.eyebrow}</span>

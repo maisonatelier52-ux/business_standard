@@ -128,7 +128,7 @@ export default function AboutPage() {
         <article className="bg-[#fffefa] p-[30px]">
           <span id="privacy" className="text-[#71151f] text-[9px] uppercase tracking-[.14em]">Privacy</span>
           <h2 className="font-bold font-['Georgia','Times_New_Roman',serif] text-[25px]">Minimal by default.</h2>
-          <p className="text-[#6f6966] font-['Georgia','Times_New_Roman',serif] text-[13px] leading-[1.6]">The site currently does not submit newsletter addresses to a server, set marketing cookies or create user accounts.</p>
+          <p className="text-[#6f6966] font-['Georgia','Times_New_Roman',serif] text-[13px] leading-[1.6]">Newsletter signup status is saved in the visitor&apos;s browser. An address is submitted to a server only when the publisher configures a newsletter endpoint. The site does not set marketing cookies or create user accounts.</p>
         </article>
         <article className="bg-[#fffefa] p-[30px]">
           <span id="terms" className="text-[#71151f] text-[9px] uppercase tracking-[.14em]">Terms</span>
