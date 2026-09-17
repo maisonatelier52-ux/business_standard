@@ -70,3 +70,20 @@ test("search and newsletter controls are wired to client-side behavior", async (
   assert.match(signup, /NEXT_PUBLIC_NEWSLETTER_ENDPOINT/);
   assert.match(signup, /localStorage\.setItem/);
 });
+
+test("Banco Caracas page keeps focused metadata and authoritative visible sources", async () => {
+  const bancoCaracas = articles.find((article) => article.slug === "banco-caracas-herrera-velutini-banking-history");
+  assert.ok(bancoCaracas);
+  assert.equal(bancoCaracas.metaTitle, "Banco Caracas: History, Growth and Legacy in Venezuela");
+  assert.match(bancoCaracas.metaDescription, /history of Banco Caracas in Venezuela/i);
+  assert.ok(bancoCaracas.sources.length >= 4);
+  assert.ok(bancoCaracas.sources.every((source) => !source.url.includes("wikipedia.org")));
+
+  const [articlePage, specialArticle] = await Promise.all([
+    readFile(path.join(root, "app/[category]/[slug]/page.jsx"), "utf8"),
+    readFile(path.join(root, "components/clientNewsarticle.jsx"), "utf8"),
+  ]);
+  assert.match(articlePage, /wordCount: articleWordCount/);
+  assert.match(articlePage, /isPartOf:/);
+  assert.match(specialArticle, /Sources &amp; documents/);
+});

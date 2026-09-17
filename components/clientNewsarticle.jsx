@@ -236,7 +236,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
           {article.sources.length > 0 && (
             <section className="mt-[30px] border-t border-[#d9d0c6] pt-[18px]" aria-labelledby="source-link-heading">
               <h2 id="source-link-heading" className={`${SANS} m-0 mb-[12px] text-[10px] font-bold uppercase tracking-[.16em] text-[#9d302e]`}>
-                Reference link supplied with the article
+                Sources &amp; documents
               </h2>
               <div className="flex flex-col gap-[10px]">
                 {article.sources.map((source) => {
@@ -252,7 +252,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
                         <FiLink size={15} aria-hidden="true" />
                       </span>
                       <span className="min-w-0">
-                        <strong className={`${SANS} block text-[9px] uppercase tracking-[.14em] text-[#9b948b]`}>Source</strong>
+                        <strong className={`${SANS} block text-[9px] uppercase tracking-[.14em] text-[#9b948b]`}>{source.type}</strong>
                         <span className={`${SERIF} mt-[3px] block truncate text-[14px] text-[#26211d] group-hover:text-[#9d302e]`}>
                           {source.name}
                         </span>

@@ -2417,8 +2417,8 @@
     {
       "id": 11,
       "slug": "banco-caracas-herrera-velutini-banking-history",
-      "metaTitle": "Banco Caracas: History, Ownership and 2000 Acquisition",
-      "metaDescription": "Banco Caracas was a Venezuelan bank founded in 1890 and acquired by Banco de Venezuela in 2000. Explore its history, ownership, growth and legacy.",
+      "metaTitle": "Banco Caracas: History, Growth and Legacy in Venezuela",
+      "metaDescription": "Explore the history of Banco Caracas in Venezuela, from its 1890 founding and growth to Herrera Velutini connections and its acquisition in 2000.",
       "title": "Banco Caracas: When a Family Tradition Entered the Financial Life of a Nation",
       "excerpt": "The institution that transformed private credibility into public banking power",
       "category": "business",
@@ -2615,10 +2615,10 @@
       "whyItMatters": "This is where banking institutions become inseparable from national history.",
       "whatToWatch": "That transition was not simply expansion. It was adaptation to a new financial age.",
       "sources": [
-         {
-          "name": "Central Bank of Venezuela reference",
-          "url": "https://en.wikipedia.org/wiki/Central_Bank_of_Venezuela",
-          "type": "Reference link supplied with the article"
+        {
+          "name": "Legacy — Banvelca",
+          "url": "https://www.banvelca.com/about-us/legacy",
+          "type": "Family-published institutional history"
         },
         {
           "name": "Historia de la banca en Venezuela — Asociación Bancaria de Venezuela",
@@ -2636,8 +2636,8 @@
           "type": "Official regulatory filing"
         }
       ],
-      "updatedAt": "2026-09-15T00:00:00.000Z",
-      "verificationNote": "The article text is reproduced exactly from the supplied PDF."
+      "updatedAt": "2026-09-17T00:00:00.000Z",
+      "verificationNote": "The article text is reproduced exactly from the supplied PDF; supporting sources were reviewed September 17, 2026."
     },
     {
       "id": 1,

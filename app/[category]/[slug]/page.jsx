@@ -104,11 +104,17 @@ export default async function ArticlePage({ params }) {
   const { previous, next } = getAdjacentArticles(article);
   const label = categoryLabel(article.category);
   const tags = Array.from(new Set([label, article.eyebrow]));
+  const articleWordCount = article.sections
+    .flatMap((section) => section.blocks)
+    .filter((block) => block.type === "paragraph")
+    .reduce((count, block) => count + block.text.trim().split(/\s+/).length, 0);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
     headline: article.title,
     description: article.metaDescription || article.summary,
+    url: canonicalUrl,
+    thumbnailUrl: article.image ? `${siteConfig.url}${article.image}` : undefined,
     ...(article.image ? { image: [`${siteConfig.url}${article.image}`] } : {}),
     datePublished: article.publishedAt,
     dateModified: article.updatedAt,
@@ -121,9 +127,11 @@ export default async function ArticlePage({ params }) {
       logo: { "@type": "ImageObject", url: `${siteConfig.url}/favicon.svg` },
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    isPartOf: { "@type": "WebSite", "@id": `${siteConfig.url}/#website` },
     articleSection: label,
     inLanguage: "en",
     keywords: article.keywords,
+    wordCount: articleWordCount,
     citation: article.sources.map((sourceItem) => sourceItem.url),
     isAccessibleForFree: true,
     ...(article.slug === BANCO_CARACAS_SLUG
