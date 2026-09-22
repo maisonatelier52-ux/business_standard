@@ -27,9 +27,35 @@ export default async function AuthorPage({ params }) {
   const author = getAuthor(slug);
   if (!author) notFound();
   const posts = articles.filter((article) => article.authorSlug === slug);
+  const canonicalUrl = `${siteConfig.url}/author/${author.slug}`;
+  const authorId = `${canonicalUrl}#author`;
+  const authorJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": `${canonicalUrl}#profile`,
+        url: canonicalUrl,
+        name: author.name,
+        description: author.bio,
+        mainEntity: { "@id": authorId },
+        isPartOf: { "@id": `${siteConfig.url}/#website` },
+      },
+      {
+        "@type": "Organization",
+        "@id": authorId,
+        name: author.name,
+        description: author.bio,
+        image: author.image ? `${siteConfig.url}${author.image}` : undefined,
+        memberOf: { "@id": `${siteConfig.url}/#organization` },
+        url: canonicalUrl,
+      },
+    ],
+  };
 
   return (
     <main id="main-content" >
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(authorJsonLd) }} />
       <section className="relative bg-[linear-gradient(180deg,#f7f5f2_0%,#efece6_100%)] border-b border-[#e5e0d8] py-[56px] overflow-hidden">
         <div
           aria-hidden="true"

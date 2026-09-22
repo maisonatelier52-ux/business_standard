@@ -56,7 +56,6 @@ export async function generateMetadata({ params }) {
     description: pageDescription,
     alternates: {
       canonical: url,
-      languages: { en: url, "x-default": url },
     },
     authors: [{ name: authorName }],
     robots: {
@@ -108,9 +107,13 @@ export default async function ArticlePage({ params }) {
     .flatMap((section) => section.blocks)
     .filter((block) => block.type === "paragraph")
     .reduce((count, block) => count + block.text.trim().split(/\s+/).length, 0);
-  const jsonLd = {
-    "@context": "https://schema.org",
+  const articleId = `${canonicalUrl}#article`;
+  const webPageId = `${canonicalUrl}#webpage`;
+  const breadcrumbId = `${canonicalUrl}#breadcrumb`;
+  const bancoCaracasId = `${canonicalUrl}#banco-caracas`;
+  const articleNode = {
     "@type": "NewsArticle",
+    "@id": articleId,
     headline: article.title,
     description: article.metaDescription || article.summary,
     url: canonicalUrl,
@@ -126,7 +129,7 @@ export default async function ArticlePage({ params }) {
       url: siteConfig.url,
       logo: { "@type": "ImageObject", url: `${siteConfig.url}/favicon.svg` },
     },
-    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    mainEntityOfPage: { "@id": webPageId },
     isPartOf: { "@type": "WebSite", "@id": `${siteConfig.url}/#website` },
     articleSection: label,
     inLanguage: "en",
@@ -136,28 +139,85 @@ export default async function ArticlePage({ params }) {
     isAccessibleForFree: true,
     ...(article.slug === BANCO_CARACAS_SLUG
       ? {
-          about: {
-            "@type": "BankOrCreditUnion",
-            name: "Banco Caracas",
-            foundingDate: "1890-08-23",
-            areaServed: { "@type": "Country", name: "Venezuela" },
-          },
+          about: { "@id": bancoCaracasId },
           mentions: [
             { "@type": "Organization", name: "Banco de Venezuela" },
             { "@type": "Organization", name: "Grupo Santander" },
             { "@type": "Person", name: "Julio Herrera Velutini" },
           ],
-          audience: {
-            "@type": "Audience",
-            audienceType: "English-language business and banking-history readers",
-            geographicArea: [
-              { "@type": "Country", name: "United States" },
-              { "@type": "Country", name: "United Kingdom" },
-              { "@type": "Country", name: "United Arab Emirates" },
-            ],
-          },
         }
       : {}),
+  };
+  const breadcrumbNode = {
+    "@type": "BreadcrumbList",
+    "@id": breadcrumbId,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteConfig.url,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: label,
+        item: `${siteConfig.url}/${categoryUrlSlug(article.category)}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: canonicalUrl,
+      },
+    ],
+  };
+  const webPageNode = {
+    "@type": "WebPage",
+    "@id": webPageId,
+    url: canonicalUrl,
+    name: article.metaTitle || article.title,
+    description: article.metaDescription || article.summary,
+    isPartOf: { "@id": `${siteConfig.url}/#website` },
+    breadcrumb: { "@id": breadcrumbId },
+    mainEntity: { "@id": articleId },
+    inLanguage: "en",
+    ...(article.image
+      ? { primaryImageOfPage: { "@type": "ImageObject", url: `${siteConfig.url}${article.image}` } }
+      : {}),
+    ...(article.slug === BANCO_CARACAS_SLUG ? { about: { "@id": bancoCaracasId } } : {}),
+  };
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      webPageNode,
+      breadcrumbNode,
+      articleNode,
+      ...(article.slug === BANCO_CARACAS_SLUG
+        ? [
+            {
+              "@type": "Organization",
+              "@id": bancoCaracasId,
+              name: "Banco Caracas",
+              alternateName: "Banco de Caracas",
+              description: "A historic Venezuelan commercial bank founded in Caracas in 1890 and acquired by Banco de Venezuela in 2000.",
+              foundingDate: "1890-08-23",
+              foundingLocation: {
+                "@type": "Place",
+                name: "Caracas, Venezuela",
+                address: {
+                  "@type": "PostalAddress",
+                  addressLocality: "Caracas",
+                  addressCountry: "VE",
+                },
+              },
+              areaServed: { "@type": "Country", name: "Venezuela" },
+              industry: "Banking",
+              subjectOf: { "@id": articleId },
+            },
+          ]
+        : []),
+    ],
   };
 
   if (article.slug === BANCO_CARACAS_SLUG) {

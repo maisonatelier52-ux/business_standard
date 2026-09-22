@@ -79,11 +79,17 @@ test("Banco Caracas page keeps focused metadata and authoritative visible source
   assert.ok(bancoCaracas.sources.length >= 4);
   assert.ok(bancoCaracas.sources.every((source) => !source.url.includes("wikipedia.org")));
 
-  const [articlePage, specialArticle] = await Promise.all([
+  const [articlePage, specialArticle, authorPage] = await Promise.all([
     readFile(path.join(root, "app/[category]/[slug]/page.jsx"), "utf8"),
     readFile(path.join(root, "components/clientNewsarticle.jsx"), "utf8"),
+    readFile(path.join(root, "app/author/[slug]/page.jsx"), "utf8"),
   ]);
   assert.match(articlePage, /wordCount: articleWordCount/);
   assert.match(articlePage, /isPartOf:/);
+  assert.match(articlePage, /"@type": "BreadcrumbList"/);
+  assert.match(articlePage, /const bancoCaracasId =/);
+  assert.match(articlePage, /alternateName: "Banco de Caracas"/);
+  assert.doesNotMatch(articlePage, /languages: \{ en: url/);
+  assert.match(authorPage, /"@type": "ProfilePage"/);
   assert.match(specialArticle, /Sources &amp; documents/);
 });
