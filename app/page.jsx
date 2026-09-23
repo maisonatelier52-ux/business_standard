@@ -11,6 +11,7 @@ export const metadata = {
   alternates: { canonical: siteConfig.url },
 };
 
+
 // This story is pinned to the very first hero slot on the homepage and is
 // never displaced by newer stories. To keep it from also showing up a
 // second time somewhere else on the page, it's removed from `homeArticles`
