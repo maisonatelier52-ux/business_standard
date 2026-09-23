@@ -7,8 +7,9 @@
   },
   "scripts": {
     "dev": "vinext dev",
-    "build": "vinext build",
-    "build:vercel": "next build",
+    "build:pillars": "node scripts/build-pillar-data.mjs",
+    "build": "npm run build:pillars && vinext build",
+    "build:vercel": "npm run build:pillars && next build",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "eslint app components data lib eslint.config.mjs next.config.mjs postcss.config.mjs vite.config.mjs",
     "test": "npm run lint && npm run build && node --test tests/project.test.mjs"

@@ -1,4 +1,5 @@
 import { articles, authors, categories, categoryUrlSlug } from "@/data/news";
+import { pillarArticles } from "@/data/pillars";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap() {
@@ -25,5 +26,11 @@ export default function sitemap() {
     changeFrequency: "monthly",
     priority: 0.5,
   }));
-  return [...staticPages, ...categoryPages, ...articlePages, ...authorPages];
+  const pillarPages = pillarArticles.map((article) => ({
+    url: `${siteConfig.url}${article.path}`,
+    lastModified: new Date(article.updatedAt),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+  return [...staticPages, ...categoryPages, ...articlePages, ...pillarPages, ...authorPages];
 }

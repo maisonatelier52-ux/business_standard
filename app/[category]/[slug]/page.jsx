@@ -4,7 +4,9 @@ import { Newsletter } from "@/components/Newsletter";
 import { ShareRow } from "@/components/ShareRow";
 import { ArticleNav } from "@/components/ArticleNav";
 import ClientNewsarticle from "@/components/clientNewsarticle";
+import PillarNewsarticle from "@/components/PillarNewsarticle";
 import { articles, categoryFromUrlSlug, categoryLabel, categoryUrlSlug, formatDate, getAdjacentArticles, getArticle, getAuthor, timeAgo } from "@/data/news";
+import { getPillarArticle, getRelatedPillars, pillarArticles } from "@/data/pillars";
 import { siteConfig } from "@/lib/site";
 
 const BANCO_CARACAS_SLUG = "banco-caracas-herrera-velutini-banking-history";
@@ -20,9 +22,7 @@ function getRelatedForArticle(article) {
     .slice(0, 4);
 
   if (article.slug === BANCO_CARACAS_SLUG) {
-    return BANCO_CARACAS_CLUSTER_SLUGS
-      .map((relatedSlug) => articles.find((item) => item.slug === relatedSlug))
-      .filter(Boolean);
+    return defaultRelated.slice(0, 3);
   }
 
   if (BANCO_CARACAS_CLUSTER_SLUGS.includes(article.slug)) {
@@ -39,11 +39,53 @@ function getRelatedForArticle(article) {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return articles.map((article) => ({ category: categoryUrlSlug(article.category), slug: article.slug }));
+  return [
+    ...articles.map((article) => ({ category: categoryUrlSlug(article.category), slug: article.slug })),
+    ...pillarArticles.map((article) => ({ category: article.category, slug: article.slug })),
+  ];
 }
 
 export async function generateMetadata({ params }) {
   const { category, slug } = await params;
+  const pillarArticle = getPillarArticle(category, slug);
+  if (pillarArticle) {
+    const url = `${siteConfig.url}${pillarArticle.path}`;
+    return {
+      title: pillarArticle.metaTitle,
+      description: pillarArticle.metaDescription,
+      alternates: { canonical: url },
+      authors: [{ name: "Business Standard Editorial Desk" }],
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+          "max-video-preview": -1,
+        },
+      },
+      openGraph: {
+        type: "article",
+        title: pillarArticle.metaTitle,
+        description: pillarArticle.metaDescription,
+        url,
+        locale: "en_US",
+        alternateLocale: ["en_GB", "en_AE"],
+        images: [{ url: `${siteConfig.url}${pillarArticle.image}`, alt: pillarArticle.imageAlt }],
+        publishedTime: pillarArticle.publishedAt,
+        modifiedTime: pillarArticle.updatedAt,
+        section: "Banco Caracas Pillars",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: pillarArticle.metaTitle,
+        description: pillarArticle.metaDescription,
+        images: [`${siteConfig.url}${pillarArticle.image}`],
+      },
+    };
+  }
   const article = getArticle(categoryFromUrlSlug(category), slug);
   if (!article) return {};
   const url = `${siteConfig.url}/${categoryUrlSlug(article.category)}/${article.slug}`;
@@ -93,6 +135,75 @@ const CARD = "bg-[#f7f5f2] border border-[#e5e0d8] p-[20px] rounded-none [&>h2]:
 
 export default async function ArticlePage({ params }) {
   const { category, slug } = await params;
+  const pillarArticle = getPillarArticle(category, slug);
+  if (pillarArticle) {
+    const canonicalUrl = `${siteConfig.url}${pillarArticle.path}`;
+    const mainArticle = articles.find((item) => item.slug === BANCO_CARACAS_SLUG);
+    const related = [
+      ...(mainArticle
+        ? [{ ...mainArticle, path: `/business/${BANCO_CARACAS_SLUG}` }]
+        : []),
+      ...getRelatedPillars(pillarArticle, 2),
+    ];
+    const articleId = `${canonicalUrl}#article`;
+    const webPageId = `${canonicalUrl}#webpage`;
+    const breadcrumbId = `${canonicalUrl}#breadcrumb`;
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": webPageId,
+          url: canonicalUrl,
+          name: pillarArticle.metaTitle,
+          description: pillarArticle.metaDescription,
+          isPartOf: { "@id": `${siteConfig.url}/#website` },
+          breadcrumb: { "@id": breadcrumbId },
+          mainEntity: { "@id": articleId },
+          primaryImageOfPage: { "@type": "ImageObject", url: `${siteConfig.url}${pillarArticle.image}` },
+          inLanguage: "en",
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": breadcrumbId,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+            { "@type": "ListItem", position: 2, name: "Banco Caracas", item: `${siteConfig.url}/business/${BANCO_CARACAS_SLUG}` },
+            { "@type": "ListItem", position: 3, name: pillarArticle.title, item: canonicalUrl },
+          ],
+        },
+        {
+          "@type": "Article",
+          "@id": articleId,
+          headline: pillarArticle.title,
+          description: pillarArticle.metaDescription,
+          url: canonicalUrl,
+          image: [`${siteConfig.url}${pillarArticle.image}`],
+          datePublished: pillarArticle.publishedAt,
+          dateModified: pillarArticle.updatedAt,
+          author: { "@type": "Organization", name: "Business Standard Editorial Desk", url: `${siteConfig.url}/author/business-standard-editorial-desk` },
+          publisher: { "@id": `${siteConfig.url}/#organization` },
+          mainEntityOfPage: { "@id": webPageId },
+          isPartOf: { "@type": "CreativeWorkSeries", name: "Banco Caracas Pillar Series", url: `${siteConfig.url}/business/${BANCO_CARACAS_SLUG}` },
+          about: { "@type": "Organization", name: "Banco Caracas", alternateName: "Banco de Caracas" },
+          inLanguage: "en",
+          keywords: pillarArticle.keywords,
+          wordCount: pillarArticle.wordCount,
+          citation: pillarArticle.sources.map((source) => source.url),
+          isAccessibleForFree: true,
+        },
+      ],
+    };
+
+    return (
+      <PillarNewsarticle
+        article={pillarArticle}
+        canonicalUrl={canonicalUrl}
+        related={related}
+        jsonLd={jsonLd}
+      />
+    );
+  }
   const article = getArticle(categoryFromUrlSlug(category), slug);
   if (!article) notFound();
   const author = getAuthor(article.authorSlug);

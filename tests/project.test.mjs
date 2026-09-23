@@ -4,6 +4,7 @@ import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { articles, categories } from "../data/news.js";
+import { pillarArticles } from "../data/pillars.js";
 import { navCategories, siteConfig } from "../lib/site.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -92,4 +93,40 @@ test("Banco Caracas page keeps focused metadata and authoritative visible source
   assert.doesNotMatch(articlePage, /languages: \{ en: url/);
   assert.match(authorPage, /"@type": "ProfilePage"/);
   assert.match(specialArticle, /Sources &amp; documents/);
+});
+
+test("Banco Caracas pillar library stays complete, private to detail routes and fully illustrated", async () => {
+  assert.equal(pillarArticles.length, 15);
+
+  const seenPaths = new Set();
+  for (const pillar of pillarArticles) {
+    assert.ok(!seenPaths.has(pillar.path), `duplicate pillar route ${pillar.path}`);
+    seenPaths.add(pillar.path);
+    assert.equal(pillar.path, `/${pillar.category}/${pillar.slug}`);
+    assert.ok(pillar.wordCount >= 600, `${pillar.path} has only ${pillar.wordCount} words`);
+    assert.ok(pillar.paragraphs.length >= 6, `${pillar.path} needs a complete article body`);
+    assert.ok(pillar.sources.length >= 2, `${pillar.path} needs sources`);
+    assert.ok(pillar.sources.every((source) => /^https:\/\//.test(source.url)));
+    assert.match(pillar.image, /^\/images\/illustrations\/pillars\/.+\.webp$/);
+    await access(path.join(root, "public", pillar.image));
+
+    assert.ok(
+      !articles.some((article) => article.slug === pillar.slug),
+      `${pillar.path} must not enter homepage or category news feeds`,
+    );
+  }
+
+  const [articlePage, specialArticle, pillarArticle, sitemap] = await Promise.all([
+    readFile(path.join(root, "app/[category]/[slug]/page.jsx"), "utf8"),
+    readFile(path.join(root, "components/clientNewsarticle.jsx"), "utf8"),
+    readFile(path.join(root, "components/PillarNewsarticle.jsx"), "utf8"),
+    readFile(path.join(root, "app/sitemap.js"), "utf8"),
+  ]);
+
+  assert.match(articlePage, /getPillarArticle/);
+  assert.match(articlePage, /getRelatedPillars\(pillarArticle, 2\)/);
+  assert.match(articlePage, /return pillarArticles/);
+  assert.match(specialArticle, /pillarLinkTerms/);
+  assert.match(pillarArticle, /Related Features/);
+  assert.match(sitemap, /pillarArticles\.map/);
 });

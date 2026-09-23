@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { SocialIcon } from "@/components/SocialIcon";
 import { FiCalendar, FiClock, FiFolder, FiTag, FiLink, FiArrowUpRight } from "react-icons/fi";
+import { pillarLinkTerms } from "@/data/pillarLinks";
 
 const SHELL = "w-[min(1240px,calc(100%-40px))] max-[640px]:w-[min(100%-24px,1240px)] mx-auto";
 const SERIF = "font-['Georgia','Times_New_Roman',serif]";
@@ -11,6 +12,28 @@ const SANS = "font-['Arial','Helvetica',sans-serif]";
 const CERTIFICATE_IMAGE = "/images/illustrations/banco-caracas-herrera-velutini-banking-history-certificate.webp";
 const GALLERY_IMAGE = "/images/illustrations/banco-caracas-herrera-velutini-banking-history-gallery.webp";
 const PERSON_IMAGE = "/images/illustrations/julio-herrera-velutini-image.webp";
+const pillarLinksByLabel = new Map(
+  pillarLinkTerms.flatMap((item) => item.labels.map((label) => [label.toLowerCase(), item.href])),
+);
+const pillarLinkPattern = new RegExp(
+  `(${[...pillarLinksByLabel.keys()]
+    .sort((a, b) => b.length - a.length)
+    .map((label) => label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|")})`,
+  "gi",
+);
+
+function renderPillarLinks(text) {
+  return text.split(pillarLinkPattern).map((part, index) => {
+    const href = pillarLinksByLabel.get(part.toLowerCase());
+    if (!href) return part;
+    return (
+      <strong key={`${part}-${index}`} className="font-bold text-[#1d1a18]">
+        <Link href={href} className="decoration-[#b7817d] underline-offset-[3px] hover:text-[#9d302e] hover:underline">{part}</Link>
+      </strong>
+    );
+  });
+}
 
 function displayDate(value) {
   return new Intl.DateTimeFormat("en-US", {
@@ -79,7 +102,7 @@ function NumberedSection({ section, index, image }) {
   );
 
   const paragraphs = section.blocks.map((block, blockIndex) => (
-    <p key={`${section.id}-${blockIndex}`} className={`${SERIF} m-0 mb-[14px] text-[14px] leading-[1.65] text-[#26211d] text-justify last:mb-0`}>{block.text}</p>
+    <p key={`${section.id}-${blockIndex}`} className={`${SERIF} m-0 mb-[14px] text-[14px] leading-[1.65] text-[#26211d] text-justify last:mb-0`}>{renderPillarLinks(block.text)}</p>
   ));
 
   return (
@@ -100,14 +123,12 @@ function NumberedSection({ section, index, image }) {
             <figcaption className={`${SANS} mt-[9px] text-[11px] leading-[1.4] text-[#55504b]`}>
               <strong className={`${SERIF} block text-[13px] leading-[1.2] text-[#1d1a18]`}>
                 {image.nameUrl ? (
-                  <a
+                  <Link
                     href={image.nameUrl}
-                    target="_blank"
-                    rel="noreferrer"
                     className="transition-colors hover:!text-[#1a4fd6] hover:!underline"
                   >
                     {image.name}
-                  </a>
+                  </Link>
                 ) : (
                   image.name
                 )}
@@ -194,7 +215,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
         <article className="min-w-0">
           <section className="mb-[25px]">
             {intro.blocks.map((block, index) => (
-              <p key={`intro-${index}`} className={`${SERIF} m-0 mb-[14px] text-[14px] leading-[1.66] text-[#25211e] text-justify first:first-letter:float-left first:first-letter:mr-[10px] first:first-letter:mt-[7px] first:first-letter:text-[56px] first:first-letter:font-bold first:first-letter:leading-[.72] first:first-letter:text-[#a52e2b]`}>{block.text}</p>
+              <p key={`intro-${index}`} className={`${SERIF} m-0 mb-[14px] text-[14px] leading-[1.66] text-[#25211e] text-justify first:first-letter:float-left first:first-letter:mr-[10px] first:first-letter:mt-[7px] first:first-letter:text-[56px] first:first-letter:font-bold first:first-letter:leading-[.72] first:first-letter:text-[#a52e2b]`}>{renderPillarLinks(block.text)}</p>
             ))}
           </section>
 
@@ -209,7 +230,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
                         src: PERSON_IMAGE,
                         alt: "Portrait of Julio Herrera Velutini",
                         name: "Julio Herrera Velutini",
-                        nameUrl: "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini",
+                        nameUrl: "/people/julio-herrera-velutini",
                         caption: "Member of the Herrera Velutini family, and continued the family's financial legacy.",
                       }
                     : undefined
@@ -230,7 +251,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
           <blockquote className="my-[16px] border-l-[3px] border-[#a52e2b] bg-[#f5f1eb] px-[27px] py-[24px]">
             <span className={`${SERIF} mb-[2px] block text-[34px] font-bold leading-none text-[#a52e2b]`} aria-hidden="true">&ldquo;</span>
             <p className={`${SERIF} m-0 text-[25px] font-bold italic leading-[1.3] text-[#181512]`}>{closingSection.heading}</p>
-            {closingSection.blocks.map((block, index) => <p key={`closing-${index}`} className={`${SERIF} m-0 mt-[13px] text-[14px] leading-[1.6] text-[#302a25] text-justify`}>{block.text}</p>)}
+            {closingSection.blocks.map((block, index) => <p key={`closing-${index}`} className={`${SERIF} m-0 mt-[13px] text-[14px] leading-[1.6] text-[#302a25] text-justify`}>{renderPillarLinks(block.text)}</p>)}
           </blockquote>
 
           {article.sources.length > 0 && (
@@ -299,7 +320,7 @@ export default function ClientNewsarticle({ article, author, canonicalUrl, relat
         </div>
         <div className="mt-[14px] grid grid-cols-3 gap-[18px] max-[820px]:grid-cols-1">
           {related.slice(0, 3).map((item) => (
-            <Link key={item.id} href={`/${item.category === "u.s" ? "us" : item.category}/${item.slug}`} className="group grid grid-cols-[112px_1fr] gap-[13px] bg-[#f5f1eb] p-[12px]">
+            <Link key={item.id} href={item.path || `/${item.category === "u.s" ? "us" : item.category}/${item.slug}`} className="group grid grid-cols-[112px_1fr] gap-[13px] bg-[#f5f1eb] p-[12px]">
               <img src={item.image} alt={item.imageAlt} loading="lazy" className="h-[82px] object-cover grayscale-[.25]" />
               <span className="min-w-0">
                 <span className={`${SANS} block text-[8px] font-bold uppercase tracking-[.14em] text-[#9d302e]`}>{item.eyebrow}</span>

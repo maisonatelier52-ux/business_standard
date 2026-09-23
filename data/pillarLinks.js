@@ -1,0 +1,17 @@
+export const pillarLinkTerms = [
+  { labels: ["Julio César Velutini Couturier"], href: "/people/julio-cesar-velutini-couturier" },
+  { labels: ["Belén Clarisa Velutini Pérez-Matos"], href: "/people/belen-clarisa-velutini-perez-matos" },
+  { labels: ["Julio Herrera Velutini"], href: "/people/julio-herrera-velutini" },
+  { labels: ["Herrera Velutini family"], href: "/organizations/herrera-velutini-family" },
+  { labels: ["Grupo Santander Central Hispano", "Banco Santander Central Hispano"], href: "/organizations/banco-santander-central-hispano" },
+  { labels: ["Banco de Venezuela"], href: "/organizations/banco-de-venezuela" },
+  { labels: ["Banco Caracas"], href: "/organizations/banco-caracas" },
+  { labels: ["Britannia group", "Britannia Financial Group", "Britannia"], href: "/organizations/britannia-financial-group" },
+  { labels: ["Banvelca"], href: "/organizations/banvelca" },
+  { labels: ["23 August 1890"], href: "/events/banco-caracas-incorporation-1890" },
+  { labels: ["late 1990s"], href: "/events/banco-caracas-late-1990s-reorganization" },
+  { labels: ["December 2000"], href: "/events/banco-caracas-acquisition-2000" },
+  { labels: ["1908"], href: "/history/banco-caracas-1908-figures" },
+  { labels: ["Caracas"], href: "/places/caracas" },
+  { labels: ["Venezuela"], href: "/places/venezuela-banking-history" },
+];
