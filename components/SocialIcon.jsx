@@ -19,6 +19,7 @@ import {
   FaYoutube,
   FaWhatsapp,
 } from "react-icons/fa6";
+import { SiReddit, SiSubstack, SiMedium } from "react-icons/si";
 
 // Maps the same `name` strings used across the project to a react-icons component.
 const ICONS = {
@@ -28,6 +29,9 @@ const ICONS = {
   linkedin: FaLinkedinIn,
   youtube: FaYoutube,
   whatsapp: FaWhatsapp,
+  reddit: SiReddit,
+  substack: SiSubstack,
+  medium: SiMedium,
 
   search: FiSearch,
   menu: FiMenu,

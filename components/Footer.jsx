@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { categoryUrlSlug } from "@/data/news";
-import { navCategories, siteConfig } from "@/lib/site";
+import { navCategories, siteConfig, socialLinks } from "@/lib/site";
+import { SocialIcon } from "./SocialIcon";
 
 export function Footer() {
   return (
@@ -11,6 +12,21 @@ export function Footer() {
           <strong className="block text-[#f3d7da] font-bold font-['Georgia','Times_New_Roman',serif] text-[32px] tracking-[.08em]">BUSINESS STANDARD</strong>
           <p className="max-w-[260px] text-[#abb6bd] font-['Georgia','Times_New_Roman',serif] text-[14px] leading-[1.55]">{siteConfig.tagline}</p>
           <p className="max-w-[270px] text-[#7f919c] text-[11px] leading-[1.5]">Independent, source-visible news for U.S. readers. Editorial illustrations are conceptual and never presented as documentary evidence.</p>
+          <div className="flex flex-wrap items-center gap-[10px] mt-[18px]">
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                title={social.label}
+                aria-label={social.label}
+                target="_blank"
+                rel="noopener noreferrer me"
+                className="flex h-[36px] w-[36px] items-center justify-center rounded-full border border-white/25 text-[#e5e8ea] transition-colors hover:border-[#efb3ba] hover:text-[#efb3ba]"
+              >
+                <SocialIcon name={social.name} size={16} />
+              </a>
+            ))}
+          </div>
         </div>
         <div>
           <h2 className="m-0 mb-[14px] text-[#aeb8be] text-[11px] uppercase tracking-[.14em]">Sections</h2>

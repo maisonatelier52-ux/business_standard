@@ -2,7 +2,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { articles } from "@/data/news";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, socialLinks } from "@/lib/site";
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -54,6 +54,7 @@ const siteJsonLd = {
       url: siteConfig.url,
       logo: { "@type": "ImageObject", url: `${siteConfig.url}/favicon.svg` },
       description: siteConfig.description,
+      sameAs: socialLinks.map((social) => social.href),
     },
     {
       "@type": "WebSite",
