@@ -1123,6 +1123,183 @@
   ],
   "u.s": [
     {
+      "id": 12,
+      "slug": "hurricane-isaias-gulf-coast-alabama-emergency-october-2026",
+      "metaTitle": "Hurricane Isaias Nears Gulf Coast as Alabama Prepares",
+      "metaDescription": "Hurricane Isaias approaches the Gulf Coast as Alabama activates emergency plans and national seashore areas close. Read the verified October 9 forecast snapshot.",
+      "title": "Hurricane Isaias Nears Gulf Coast as Alabama Declares Emergency and Parks Close",
+      "excerpt": "Gulf Coast communities face a tightening preparation window as Isaias approaches. Alabama has declared an emergency in 40 counties, and the National Park Service has closed Gulf Islands National Seashore areas ahead of the storm.",
+      "category": "u.s",
+      "eyebrow": "Hurricane Isaias",
+      "newsType": "news",
+      "type": "normal",
+      "date": "09/10/2026",
+      "readTime": "5 min read",
+      "isPublished": "true",
+      "authorSlug": "public-life-editor",
+      "image": "/images/illustrations/hurricane-isaias-gulf-coast-alabama-emergency-october-2026.webp",
+      "imageAlt": "AI-generated editorial illustration of boarded coastal homes beside a rough Gulf shoreline under approaching storm clouds; not a photograph of Hurricane Isaias",
+      "keywords": [
+        "Hurricane Isaias",
+        "U.S. news",
+        "Gulf Coast",
+        "Alabama state of emergency",
+        "Florida Panhandle",
+        "storm surge",
+        "Gulf Islands National Seashore",
+        "October 9 2026"
+      ],
+      "keyTakeaways": [
+        "The NHC's 1 a.m. CDT October 9 advisory forecast landfall late Friday or early Saturday, with hurricane and storm-surge warnings still active.",
+        "Alabama's emergency declaration covers 40 counties; state agencies are coordinating preparations and urging caution on roads.",
+        "Gulf Islands National Seashore has closed areas in Florida and Mississippi, while inland forecasts point to a wet, windy weekend."
+      ],
+      "quote": "A storm's category describes its wind strength; it does not tell a coastal household how much water could reach its street.",
+      "whyItMatters": "This is a preparation window for coastal households and a disruption to public access and weekend travel. Inland communities also need to watch rainfall forecasts as the storm moves north.",
+      "whatToWatch": "Check the next NHC advisory, county evacuation and shelter notices, road-closure updates, and forecasts from local National Weather Service offices. This article records a dated forecast snapshot rather than a live advisory.",
+      "updatedAt": "2026-10-09T09:30:00Z",
+      "verificationNote": "Reviewed October 9, 2026 using NHC Advisory 10A, issued at 1 a.m. CDT (06:00 UTC), Alabama's October 8 safety notice, the NPS October 7 closure notice, and October 9 NWS local forecasts. Forecast figures are a time-stamped snapshot and may be superseded. This is an original synthesis of public sources, not on-scene reporting. Both images are AI-generated editorial illustrations, not documentary photographs.",
+      "sources": [
+        {
+          "name": "National Hurricane Center — Isaias Advisory 10A, 1 a.m. CDT, October 9",
+          "url": "https://www.nhc.noaa.gov/archive/2026/al09/al092026.public_a.010.shtml",
+          "type": "Official forecast snapshot"
+        },
+        {
+          "name": "Alabama Law Enforcement Agency — preparations and emergency declaration",
+          "url": "https://www.alea.gov/news/alea-encourages-alabamians-prepare-ahead-hurricane-isaias",
+          "type": "Official state notice"
+        },
+        {
+          "name": "National Park Service — Gulf Islands National Seashore closure",
+          "url": "https://www.nps.gov/guis/learn/news/national-park-service-to-close-gulf-islands-national-seashore-in-florida-mississippi-for-tropical-storm-isaias.htm",
+          "type": "Official park closure notice"
+        },
+        {
+          "name": "National Hurricane Center — hurricane hazards explained",
+          "url": "https://www.nhc.noaa.gov/prepare/hazards.php",
+          "type": "Official background and safety context"
+        },
+        {
+          "name": "NOAA National Ocean Service — how storm surge develops",
+          "url": "https://oceanservice.noaa.gov/facts/stormsurge-stormtide.html",
+          "type": "Official science explainer"
+        },
+        {
+          "name": "National Weather Service Nashville — October 9 forecast discussion",
+          "url": "https://marine.weather.gov/product.php?issuedby=OHX&product=AFD&site=DTX",
+          "type": "Official local forecast; updates over time"
+        },
+        {
+          "name": "National Weather Service Memphis — local storm and flood information",
+          "url": "https://www.weather.gov/meg/",
+          "type": "Official local forecast; updates over time"
+        },
+        {
+          "name": "NOAA — hurricane forecasting and advisory updates",
+          "url": "https://www.noaa.gov/explainers/hurricane-forecasting",
+          "type": "Official forecasting explainer"
+        },
+        {
+          "name": "NOAA — current Isaias forecast and local resources",
+          "url": "https://www.noaa.gov/isaias",
+          "type": "Official live resource hub"
+        }
+      ],
+      "content": [
+        {
+          "type": "heading",
+          "text": "A narrowing window to prepare"
+        },
+        {
+          "type": "paragraph",
+          "text": "Hurricane Isaias is approaching the northern Gulf Coast, putting coastal residents on notice ahead of an expected landfall late Friday or early Saturday. Alabama has activated emergency plans, and national seashore areas in Florida and Mississippi have closed as officials prepare for hazardous weather."
+        },
+        {
+          "type": "paragraph",
+          "text": "At 1 a.m. CDT on October 9, the National Hurricane Center reported sustained winds of 105 mph, with the center about 230 miles south of the mouth of the Mississippi River. Its advisory kept hurricane and storm-surge warnings in place. Those figures describe that particular forecast update; they are not a live reading of the storm."
+        },
+        {
+          "type": "heading",
+          "text": "Why the water threat deserves attention"
+        },
+        {
+          "type": "paragraph",
+          "text": "The storm's wind speed is only part of the picture. The National Hurricane Center's guidance explains that hurricane categories measure sustained wind, while flooding and storm surge present hazards of their own. For a household close to the shore, the question is not simply how strong the wind becomes, but whether rising water could cut off the way out."
+        },
+        {
+          "type": "paragraph",
+          "text": "NOAA's National Ocean Service describes surge as water pushed toward the coast mainly by a storm's winds. Its height varies with the storm's size, movement and approach, as well as the shape of the coastline and the underwater terrain. Normal tides add another influence. Two nearby communities can therefore face different water levels, even during the same hurricane."
+        },
+        {
+          "type": "paragraph",
+          "text": "That helps explain why county-level instructions matter. A broad regional forecast provides the setting, but it cannot replace a local notice about a particular road, neighborhood or shelter. Readers should use official local updates to make decisions about their own address, rather than treat a single wind number as a complete description of their risk."
+        },
+        {
+          "type": "heading",
+          "text": "Alabama moves into emergency preparations"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Alabama Law Enforcement Agency said Governor Kay Ivey declared a state of emergency for 40 counties on October 7. The declaration took effect at 4 p.m. that Wednesday and was scheduled to continue through October 14. It gives the state a framework to coordinate resources ahead of potential impacts."
+        },
+        {
+          "type": "paragraph",
+          "text": "In its October 8 notice, the agency urged people to reconsider unnecessary travel during severe weather and check vehicle conditions, fuel and routes ahead of time. It also advised residents to charge phones, gather emergency supplies, secure loose outdoor items and keep more than one way of receiving alerts, including an option that can wake them overnight."
+        },
+        {
+          "type": "paragraph",
+          "text": "Those are ordinary tasks, but doing them before conditions worsen leaves fewer decisions for the last minute. The agency also cautioned drivers against entering flooded roads or passing barricades. A road that appears passable from a distance may conceal damaged pavement, debris or water deep enough to make the crossing unsafe."
+        },
+        {
+          "type": "image",
+          "src": "/images/illustrations/hurricane-isaias-gulf-coast-alabama-emergency-october-2026-inline.webp",
+          "alt": "AI-generated painterly illustration of adults arranging water, flashlights, a radio and emergency supplies on a kitchen table",
+          "caption": "AI-generated editorial illustration of household storm preparations. This artwork does not depict an actual family or reported scene."
+        },
+        {
+          "type": "heading",
+          "text": "National seashore closures affect coastal plans"
+        },
+        {
+          "type": "paragraph",
+          "text": "The National Park Service announced that all areas of Gulf Islands National Seashore would close beginning October 7 as the storm approached. Its notice listed Florida locations including Fort Pickens, Opal Beach, Johnson Beach and the Naval Live Oaks area. In Mississippi, the closure covered barrier islands, including Ship Island, and the Davis Bayou area."
+        },
+        {
+          "type": "paragraph",
+          "text": "The park service also said Highway 399 on Santa Rosa Island would close Friday, with the time still to be determined in that notice. Anyone planning a beach visit or a drive through the park should check for subsequent announcements. A closure issued before a storm is a preparation measure; it does not establish that damage has already occurred."
+        },
+        {
+          "type": "heading",
+          "text": "The forecast extends beyond the shoreline"
+        },
+        {
+          "type": "paragraph",
+          "text": "Inland communities are also watching Isaias. An early October 9 discussion from the National Weather Service in Nashville forecast roughly 1 to 3 inches of rain and gusts of 30 to 40 mph in Middle Tennessee over the weekend. The office expected the heaviest rain on Saturday and Saturday night, with the system moving away on Sunday."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Memphis forecast office likewise highlighted heavy rain and strong winds from the storm's remnants on Saturday. Its local update called for generally 1 to 3 inches of rain, with higher amounts possible, and identified a flood watch extending into Sunday morning. These forecasts show why people far from the beach still have a reason to follow the storm."
+        },
+        {
+          "type": "paragraph",
+          "text": "The broader hurricane guidance offers another reminder: inland flooding can continue after the strongest winds have passed. Rainfall, drainage and river conditions deserve attention alongside the storm's changing classification. Weekend plans may need another look even in places that will never experience coastal surge."
+        },
+        {
+          "type": "heading",
+          "text": "What to check as the forecast changes"
+        },
+        {
+          "type": "paragraph",
+          "text": "NOAA explains that the hurricane center normally issues updated forecast text and graphics every six hours. Those products cover the track, intensity, watches and warnings, and the possible arrival of tropical-storm-force winds. Checking the time on an advisory is therefore as important as reading the headline above it."
+        },
+        {
+          "type": "paragraph",
+          "text": "For readers following Isaias on October 9, the useful next steps are to review the newest official advisory, local evacuation or shelter notices, and road conditions before traveling. NOAA's dedicated storm resource page links to forecasts and local information. The situation remains a forecast-driven preparation story, and later updates may change the timing or extent of the expected impacts."
+        }
+      ]
+    },
+    {
       "id": 11,
       "slug": "amazon-cargo-plane-miami-crash-ntsb-investigation-update",
       "metaTitle": "Miami Cargo Jet Crash: NTSB Pilot Interviews Begin",

@@ -12,7 +12,7 @@ const required = ["world", "u.s", "business", "finance", "technology", "politics
 
 test("publishes at least ten stories in each requested section", () => {
   assert.deepEqual([...categories].sort(), [...required].sort());
-  assert.equal(articles.length, 93);
+  assert.equal(articles.length, 94);
   for (const category of required) assert.ok(articles.filter((a) => a.category === category).length >= 10);
   assert.deepEqual(navCategories.map((name) => name.toLowerCase()), required);
 });
