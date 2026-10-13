@@ -75,8 +75,8 @@ test("search and newsletter controls are wired to client-side behavior", async (
 test("Banco Caracas page keeps focused metadata and authoritative visible sources", async () => {
   const bancoCaracas = articles.find((article) => article.slug === "banco-caracas-herrera-velutini-banking-history");
   assert.ok(bancoCaracas);
-  assert.equal(bancoCaracas.metaTitle, "Banco Caracas: History, Growth and Legacy in Venezuela");
-  assert.match(bancoCaracas.metaDescription, /history of Banco Caracas in Venezuela/i);
+  assert.equal(bancoCaracas.metaTitle, "Banco Caracas: History, Ownership and 2000 Acquisition");
+  assert.match(bancoCaracas.metaDescription, /founded in 1890 and acquired by Banco de Venezuela in 2000/i);
   assert.ok(bancoCaracas.sources.length >= 4);
   assert.ok(bancoCaracas.sources.every((source) => !source.url.includes("wikipedia.org")));
 
