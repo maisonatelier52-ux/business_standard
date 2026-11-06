@@ -125,16 +125,16 @@ export default function ClientArticlePage({ canonicalUrl, jsonLd }) {
             <span>{article.displayDate}</span><span className="mx-[8px] text-[#b5ada4]">|</span><span>{article.readTime}</span>
           </div>
         </div>
-        <div className="relative min-h-[300px] max-[860px]:aspect-[16/10] max-[860px]:min-h-0">
-          <img
-            src={article.heroImage}
-            alt={article.heroImageAlt}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            className="absolute inset-0 h-full w-full object-cover object-[50%_28%]"
-          />
-        </div>
+       <div className="relative min-h-[300px] overflow-hidden max-[860px]:aspect-[16/10] max-[860px]:min-h-0">
+        <img
+          src={article.heroImage}
+          alt={article.heroImageAlt}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute left-0 top-0 h-auto w-[145%] max-w-none -translate-y-[29%]"
+        />
+      </div>
       </section>
 
       {/* Action bar */}
