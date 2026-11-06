@@ -3,6 +3,7 @@ import { BreakingTicker } from "@/components/BreakingTicker";
 import { Newsletter } from "@/components/Newsletter";
 import { StoryCard } from "@/components/StoryCard";
 import { articles, authors, categoryLabel, categoryUrlSlug, formatDate } from "@/data/news";
+import { currencyOfTrustArticle } from "@/data/clientArticles";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = {
@@ -132,7 +133,9 @@ export default function Home() {
       <section className={`${SHELL} grid grid-cols-[minmax(0,2.45fr)_minmax(260px,.9fr)] max-[1100px]:grid-cols-1 gap-[26px] py-[28px] border-b border-[#ded8d1]`} aria-labelledby="top-stories-heading">
         <h2 id="top-stories-heading" className="sr-only">Featured posts</h2>
         <div className="grid grid-cols-2 max-[780px]:grid-cols-1 gap-[22px]">
-          {hero.slice(0, 2).map((article, index) => (
+          {/* Slot 1 = pinned Banco Caracas story, slot 2 = client "Currency of Trust"
+              story. Both are static: new articles never displace them. */}
+          {[hero[0], currencyOfTrustArticle].map((article, index) => (
             <StoryCard key={article.id} article={article} variant="lead" priority={index === 0} />
           ))}
         </div>

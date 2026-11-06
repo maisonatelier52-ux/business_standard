@@ -1,5 +1,6 @@
 import { articles, authors, categories, categoryUrlSlug } from "@/data/news";
 import { pillarArticles } from "@/data/pillars";
+import { CURRENCY_OF_TRUST_CATEGORY, CURRENCY_OF_TRUST_SLUG, currencyOfTrustArticle } from "@/data/clientArticles";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap() {
@@ -20,6 +21,14 @@ export default function sitemap() {
     changeFrequency: "weekly",
     priority: 0.7,
   }));
+  const clientPages = [
+    {
+      url: `${siteConfig.url}/${CURRENCY_OF_TRUST_CATEGORY}/${CURRENCY_OF_TRUST_SLUG}`,
+      lastModified: new Date(currencyOfTrustArticle.updatedAt),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+  ];
   const authorPages = authors.map((author) => ({
     url: `${siteConfig.url}/author/${author.slug}`,
     lastModified: new Date(),
@@ -32,5 +41,5 @@ export default function sitemap() {
     changeFrequency: "monthly",
     priority: 0.6,
   }));
-  return [...staticPages, ...categoryPages, ...articlePages, ...pillarPages, ...authorPages];
+  return [...staticPages, ...categoryPages, ...articlePages, ...clientPages, ...pillarPages, ...authorPages];
 }

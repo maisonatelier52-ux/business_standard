@@ -5,6 +5,8 @@ import { ShareRow } from "@/components/ShareRow";
 import { ArticleNav } from "@/components/ArticleNav";
 import ClientNewsarticle from "@/components/clientNewsarticle";
 import PillarNewsarticle from "@/components/PillarNewsarticle";
+import ClientArticlePage from "@/components/clientArticlePage";
+import { CURRENCY_OF_TRUST_CATEGORY, CURRENCY_OF_TRUST_SLUG, currencyOfTrustArticle, isCurrencyOfTrust } from "@/data/clientArticles";
 import { articles, categoryFromUrlSlug, categoryLabel, categoryUrlSlug, formatDate, getAdjacentArticles, getArticle, getAuthor, timeAgo } from "@/data/news";
 import { getPillarArticle, getRelatedPillars, pillarArticles } from "@/data/pillars";
 import { siteConfig } from "@/lib/site";
@@ -42,11 +44,39 @@ export function generateStaticParams() {
   return [
     ...articles.map((article) => ({ category: categoryUrlSlug(article.category), slug: article.slug })),
     ...pillarArticles.map((article) => ({ category: article.category, slug: article.slug })),
+    { category: CURRENCY_OF_TRUST_CATEGORY, slug: CURRENCY_OF_TRUST_SLUG },
   ];
 }
 
 export async function generateMetadata({ params }) {
   const { category, slug } = await params;
+  if (isCurrencyOfTrust(category, slug)) {
+    const client = currencyOfTrustArticle;
+    const url = `${siteConfig.url}/${CURRENCY_OF_TRUST_CATEGORY}/${CURRENCY_OF_TRUST_SLUG}`;
+    return {
+      title: client.metaTitle,
+      description: client.metaDescription,
+      alternates: { canonical: url },
+      authors: [{ name: "Business Standard Editorial Team" }],
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+      },
+      openGraph: {
+        type: "article",
+        title: client.metaTitle,
+        description: client.metaDescription,
+        url,
+        locale: "en_US",
+        images: [{ url: `${siteConfig.url}${client.image}`, alt: client.imageAlt }],
+        publishedTime: client.publishedAt,
+        modifiedTime: client.updatedAt,
+        section: "Business",
+      },
+      twitter: { card: "summary_large_image", title: client.metaTitle, description: client.metaDescription, images: [`${siteConfig.url}${client.image}`] },
+    };
+  }
   const pillarArticle = getPillarArticle(category, slug);
   if (pillarArticle) {
     const url = `${siteConfig.url}${pillarArticle.path}`;
@@ -135,6 +165,57 @@ const CARD = "bg-[#f7f5f2] border border-[#e5e0d8] p-[20px] rounded-none [&>h2]:
 
 export default async function ArticlePage({ params }) {
   const { category, slug } = await params;
+  if (isCurrencyOfTrust(category, slug)) {
+    const client = currencyOfTrustArticle;
+    const canonicalUrl = `${siteConfig.url}/${CURRENCY_OF_TRUST_CATEGORY}/${CURRENCY_OF_TRUST_SLUG}`;
+    const clientJsonLd = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": `${canonicalUrl}#webpage`,
+          url: canonicalUrl,
+          name: client.metaTitle,
+          description: client.metaDescription,
+          isPartOf: { "@id": `${siteConfig.url}/#website` },
+          breadcrumb: { "@id": `${canonicalUrl}#breadcrumb` },
+          mainEntity: { "@id": `${canonicalUrl}#article` },
+          primaryImageOfPage: { "@type": "ImageObject", url: `${siteConfig.url}${client.image}` },
+          inLanguage: "en",
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": `${canonicalUrl}#breadcrumb`,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+            { "@type": "ListItem", position: 2, name: "Business", item: `${siteConfig.url}/business` },
+            { "@type": "ListItem", position: 3, name: client.title, item: canonicalUrl },
+          ],
+        },
+        {
+          "@type": "NewsArticle",
+          "@id": `${canonicalUrl}#article`,
+          headline: client.title,
+          description: client.metaDescription,
+          url: canonicalUrl,
+          image: [`${siteConfig.url}${client.image}`],
+          datePublished: client.publishedAt,
+          dateModified: client.updatedAt,
+          author: { "@type": "Organization", name: "Business Standard Editorial Team", url: siteConfig.url },
+          publisher: { "@type": "Organization", "@id": `${siteConfig.url}/#organization`, name: siteConfig.name, url: siteConfig.url },
+          mainEntityOfPage: { "@id": `${canonicalUrl}#webpage` },
+          isPartOf: { "@type": "WebSite", "@id": `${siteConfig.url}/#website` },
+          articleSection: "Business",
+          inLanguage: "en",
+          keywords: client.keywords,
+          about: { "@type": "Person", name: "Julio Herrera Velutini" },
+          citation: client.sources.map((source) => source.url),
+          isAccessibleForFree: true,
+        },
+      ],
+    };
+    return <ClientArticlePage canonicalUrl={canonicalUrl} jsonLd={clientJsonLd} />;
+  }
   const pillarArticle = getPillarArticle(category, slug);
   if (pillarArticle) {
     const canonicalUrl = `${siteConfig.url}${pillarArticle.path}`;

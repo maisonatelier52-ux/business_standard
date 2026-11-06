@@ -4,6 +4,7 @@ import { Newsletter } from "@/components/Newsletter";
 import { StoryCard } from "@/components/StoryCard";
 import { Pagination } from "@/components/Pagination";
 import { articles, categories, categoryFromUrlSlug, categoryLabel, categoryUrlSlug, formatDate } from "@/data/news";
+import { currencyOfTrustArticle } from "@/data/clientArticles";
 import { siteConfig } from "@/lib/site";
 
 export const dynamicParams = false;
@@ -39,6 +40,12 @@ const PINNED_CATEGORY_SLUGS = {
   business: "banco-caracas-herrera-velutini-banking-history",
 };
 
+// Static client story pinned as the FIRST horizontal card of a category page.
+// It never changes when new stories are published in that category.
+const STATIC_FIRST_HORIZONTAL = {
+  business: currencyOfTrustArticle,
+};
+
 export default async function CategoryPage({ params, searchParams }) {
   const { category } = await params;
   const internalCategory = categoryFromUrlSlug(category);
@@ -60,8 +67,13 @@ export default async function CategoryPage({ params, searchParams }) {
   // Article 0 = big hero (overlay). Articles 1-3 = the three horizontal
   // cards next to it. Everything after that lives in the paginated list.
   const heroArticle = categoryArticles[0];
-  const horizontalArticles = categoryArticles.slice(1, 4);
-  const listArticles = categoryArticles.slice(4);
+  // When a static client story takes the first horizontal slot, the dynamic
+  // stories shift down by one so none of them disappear from the page.
+  const staticFirst = STATIC_FIRST_HORIZONTAL[internalCategory];
+  const horizontalArticles = staticFirst
+    ? [staticFirst, ...categoryArticles.slice(1, 3)]
+    : categoryArticles.slice(1, 4);
+  const listArticles = staticFirst ? categoryArticles.slice(3) : categoryArticles.slice(4);
 
   const totalPages = Math.max(1, Math.ceil(listArticles.length / LIST_PAGE_SIZE));
   const requestedPage = Number(resolvedSearchParams.page) || 1;
