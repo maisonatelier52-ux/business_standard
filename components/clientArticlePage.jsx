@@ -110,8 +110,8 @@ export default function ClientArticlePage({ canonicalUrl, jsonLd }) {
       </nav>
 
       {/* Hero */}
-      <section className={`${SHELL} grid min-h-[400px] grid-cols-[1.1fr_.9fr] overflow-hidden bg-[#f4efe8] max-[860px]:grid-cols-1`}>
-        <div className="flex flex-col justify-center px-[40px] py-[40px] max-[560px]:px-[22px] max-[560px]:py-[30px]">
+      <section className={`${SHELL} grid min-h-[410px] grid-cols-[1.1fr_.9fr] overflow-hidden bg-[#f4efe8] max-[860px]:grid-cols-1`}>
+        <div className="flex flex-col justify-center px-[40px] py-[46px] max-[560px]:px-[22px] max-[560px]:py-[34px]">
           <span className={`${SANS} text-[11px] font-extrabold uppercase tracking-[.16em] text-[#a52e2b]`}>Business</span>
           <h1 className={`${SERIF} m-0 mt-[12px] text-[clamp(28px,3.2vw,40px)] font-bold leading-[1.06] tracking-[-.02em] text-[#151515]`}>
             {article.title}
@@ -127,7 +127,7 @@ export default function ClientArticlePage({ canonicalUrl, jsonLd }) {
         </div>
         {/* Portrait is zoomed in on its left-bottom area (the person), so the face
             stays large and clear instead of showing the whole framed wall. */}
-        <div className="relative min-h-[400px] overflow-hidden max-[860px]:aspect-[4/3] max-[860px]:min-h-0">
+        <div className="relative min-h-[410px] overflow-hidden max-[860px]:aspect-[4/3] max-[860px]:min-h-0">
           <img
             src={article.heroImage}
             alt={article.heroImageAlt}
