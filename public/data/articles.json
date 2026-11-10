@@ -7719,6 +7719,135 @@
       ],
       "updatedAt": "2026-09-04T00:00:00.000Z",
       "verificationNote": "Reviewed September 4, 2026 against Politico coverage and the current Google News coverage index. This is an original synthesis, not a claim of original reporting."
+    },
+    {
+      "id": 11,
+      "slug": "supreme-court-clears-big-bend-border-wall-construction-texas",
+      "metaTitle": "Supreme Court Clears Way for Big Bend Border Wall Work",
+      "metaDescription": "The Supreme Court cleared the way for border wall construction to resume in Texas's Big Bend, a blow to bipartisan opponents and environmental groups.",
+      "title": "Supreme Court Clears Way for Big Bend Border Wall Work",
+      "excerpt": "The Supreme Court cleared the way for border wall construction to resume in Texas's Big Bend, a blow to bipartisan opponents and environmental groups.",
+      "category": "politics",
+      "eyebrow": "Politics",
+      "newsType": "news",
+      "type": "normal",
+      "date": "10/11/2026",
+      "readTime": "6 min read",
+      "isPublished": "true",
+      "authorSlug": "public-life-editor",
+      "image": "/images/illustrations/supreme-court-clears-big-bend-border-wall-construction-texas-image.webp",
+      "imageAlt": "Editorial illustration of unfinished steel border barrier construction beside the Rio Grande in the rugged Big Bend landscape",
+      "keywords": [
+        "Supreme Court",
+        "Big Bend",
+        "border wall",
+        "Trump administration",
+        "Customs and Border Protection",
+        "Texas",
+        "environment",
+        "John Cornyn",
+        "Politics"
+      ],
+      "keyTakeaways": [
+        "The Supreme Court paused a lower court order and cleared the way for border wall construction in Big Bend to resume.",
+        "Opponents include landowners, environmentalists and Republicans such as Sen. John Cornyn.",
+        "CBP has not yet released a final plan for what it would build inside Big Bend National Park."
+      ],
+      "quote": "They're signing off on the permanent destruction of the wildest place in Texas.",
+      "content": [
+        {
+          "type": "heading",
+          "text": "The Supreme Court steps in"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Supreme Court on Monday cleared the way for the Trump administration to restart border wall construction in the Big Bend region of Texas. The decision is a setback for a bipartisan group of opponents who say the project wastes money and threatens a landscape found almost nowhere else."
+        },
+        {
+          "type": "paragraph",
+          "text": "A federal judge in Texas had ordered an immediate stop to all construction-related activity in the area, which includes Big Bend National Park as well as state and private land along the river. She found that Congress likely hadn't clearly authorized such broad waivers for a stretch of the southern border with the lowest rate of migrant apprehensions."
+        },
+        {
+          "type": "paragraph",
+          "text": "The Supreme Court majority disagreed, concluding that the law sharply limits judges' power to intervene when the federal government decides that quick border barrier construction is necessary. It paused the lower court's ruling while the case continues. Justice Ketanji Brown Jackson dissented."
+        },
+        {
+          "type": "heading",
+          "text": "A signature project and a huge budget"
+        },
+        {
+          "type": "paragraph",
+          "text": "The wall is a signature project of President Donald Trump, who has long promised to build one from the Pacific Ocean to the Gulf of Mexico. Republicans in Congress funded it last summer with $46 billion."
+        },
+        {
+          "type": "paragraph",
+          "text": "Customs and Border Protection has been putting up about 12 miles of barriers a week along the border. The goal is to eventually cover the full 2,000-mile line with a mix of 30-foot steel walls, vehicle barriers and surveillance technology meant to stop illegal immigration and smuggling."
+        },
+        {
+          "type": "paragraph",
+          "text": "To move quickly, the government has issued sweeping waivers that bypass regulations. Those rules are designed to protect the environment, and they have historically slowed down large construction projects."
+        },
+        {
+          "type": "heading",
+          "text": "Why Big Bend residents object"
+        },
+        {
+          "type": "paragraph",
+          "text": "Opposition in Big Bend crosses party lines. Residents say the barriers, which would include 30-foot steel walls in places, along with vehicle barriers and new roads, would hurt the local economy and way of life in an area with historically low illegal immigration. They argue the job could be done with surveillance technology like drones."
+        },
+        {
+          "type": "paragraph",
+          "text": "The administration filed an emergency appeal, saying illegal crossings and drug seizures do occur in Big Bend and that more traffic could be pushed there if the wall had a gap. CBP head Rodney Scott told the Associated Press that if Big Bend were left without a wall while the rest of the border gets one, he is convinced cartels would quickly overrun it."
+        },
+        {
+          "type": "paragraph",
+          "text": "It's not clear how quickly work might restart. CBP didn't immediately say, and it had started building an initial section in one part of the roughly 500-mile Big Bend stretch before the judge's order halted it."
+        },
+        {
+          "type": "heading",
+          "text": "Outrage over work in the national park"
+        },
+        {
+          "type": "paragraph",
+          "text": "The agency has faced strong resistance from landowners up and down the region when seeking permission to enter their property to survey and build. The Center for Biological Diversity sued, along with Friends of the Ruidosa Church and a river guide. Laiken Jordahl of the center said it was the first time the government waived a broad set of environmental laws inside a national park."
+        },
+        {
+          "type": "paragraph",
+          "text": "He called the ruling a horrific decision that lets contractors bulldoze desert and blast canyon walls before courts decide whether the work is legal. David Keller, a board member of Conserve Big Bend and a plaintiff in a separate landowners' suit, called it devastating and said everything is on the line again. He described the projects as the industrialization of one of the last best open wild places in the lower 48 states."
+        },
+        {
+          "type": "paragraph",
+          "text": "Critics include Republicans as well as Democrats. Outgoing Sen. John Cornyn of Texas published an op-ed in the San Antonio Express-News hours before the decision, arguing that technology, adequate staffing and cooperation with local officials and landowners offer a more sensible path than unnecessary barriers."
+        },
+        {
+          "type": "heading",
+          "text": "What remains unsettled"
+        },
+        {
+          "type": "paragraph",
+          "text": "In August, the government paused construction in Big Bend National Park after bulldozers were seen breaking ground there and sparked outrage. Officials have said repeatedly that no steel walls are planned inside the park, though early plans included a new road and some vehicle barriers."
+        },
+        {
+          "type": "paragraph",
+          "text": "CBP has told the court it will present a finalized plan for the park, but it hasn't done so while the case was at the Supreme Court. That plan, and how quickly construction resumes, will be key things to watch."
+        }
+      ],
+      "whyItMatters": "The ruling shows how far federal waivers can go in speeding border construction, and it affects a national park, a river and a region where opposition crosses party lines.",
+      "whatToWatch": "Look for how quickly construction resumes, CBP's promised plan for Big Bend National Park, and the continuing lawsuits over the project.",
+      "sources": [
+        {
+          "name": "Associated Press: Border wall, landowners and Big Bend",
+          "url": "https://apnews.com/article/border-wall-landowners-texas-border-protection-immigration-f83ca0edb4c7df651025cff84b7efd89",
+          "type": "Independent source"
+        },
+        {
+          "name": "Associated Press: CBP head Rodney Scott on Big Bend wall",
+          "url": "https://apnews.com/article/border-immigration-big-bend-rodney-scott-wall-32734cc4aa2f83a7b3b23c81163d6fef",
+          "type": "Independent source"
+        }
+      ],
+      "updatedAt": "2026-11-10T00:00:00.000Z",
+      "verificationNote": "Summarized from Associated Press reporting. This is an original rewrite, not a claim of original reporting."
     }
   ],
   "health": [
