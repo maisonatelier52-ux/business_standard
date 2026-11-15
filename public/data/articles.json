@@ -11739,15 +11739,18 @@
       "verificationNote": "Reviewed November 14, 2026 against Associated Press reporting and independent coverage. Original editorial synthesis based on published reporting; not original on-the-ground reporting."
     },
 
+   
 {
   "id": 14,
   "slug": "pentagon-considers-prosecution-brett-sylvia-classified-leaks-investigation",
+  "route": "/us/pentagon-considers-prosecution-brett-sylvia-classified-leaks-investigation",
+  "category": "us",
+  "categoryName": "U.S. News",
+  "eyebrow": "US Investigation",
   "metaTitle": "Pentagon Considers Prosecution of Brett Sylvia in Classified Leaks Investigation",
   "metaDescription": "The Pentagon has directed the Army to consider prosecuting former Lt. Gen. Brett Sylvia over alleged classified information leaks as the Justice Department continues its investigation.",
   "title": "Pentagon Considers Prosecuting Fired General Brett Sylvia Over Classified Leaks",
   "excerpt": "The Pentagon has directed the Army to consider military prosecution of former Lt. Gen. Brett Sylvia following allegations that he shared classified information about Iran and Ukraine with journalists. The case raises questions about military justice, press freedom and the government's investigation into unauthorized disclosures.",
-  "category": "us",
-  "eyebrow": "US Investigation",
   "newsType": "news",
   "type": "normal",
   "date": "15/11/2026",
@@ -11918,8 +11921,9 @@
     }
   ],
   "updatedAt": "2026-11-15T00:00:00.000Z",
-  "verificationNote": "Updated November 15, 2026 using current Washington Post reporting and earlier Associated Press and Axios coverage. Allegations remain unproven. No confirmed criminal charges or court-martial findings against Sylvia as of the publication date. Editorial synthesis, not original on-the-ground reporting."
+  "verificationNote": "Updated November 15, 2026 using current reporting. Allegations remain unproven. Editorial synthesis, not original on-the-ground reporting."
 }
+
 
 
 
