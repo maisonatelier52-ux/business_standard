@@ -153,18 +153,29 @@ export default function ClientArticlePage({ canonicalUrl, jsonLd }) {
       <div className={`${SHELL} mt-[28px] grid grid-cols-[minmax(0,1fr)_285px] items-start gap-[36px] max-[900px]:grid-cols-1`}>
         <article className="min-w-0">
           <section className="mb-[22px]">
-            {article.intro.map((text, index) => (
-              <p
-                key={`intro-${index}`}
-                className={`${SERIF} m-0 mb-[12px] text-[14px] leading-[1.6] text-[#25211e] ${
-                  index === 0
-                    ? "flow-root first-letter:float-left first-letter:mr-[8px] first-letter:mt-[4px] first-letter:text-[50px] first-letter:font-bold first-letter:leading-[.78] first-letter:text-[#a52e2b]"
-                    : ""
-                }`}
-              >
-                {text}
-              </p>
-            ))}
+            {article.intro.map((item, index) => {
+              const isObject = typeof item === "object" && item !== null;
+              const text = isObject ? item.text : item;
+              const highlight = isObject && item.highlight;
+              return (
+                <p
+                  key={`intro-${index}`}
+                  className={`${SERIF} m-0 mb-[12px] text-[14px] leading-[1.6] text-[#25211e] ${
+                    index === 0
+                      ? "flow-root first-letter:float-left first-letter:mr-[8px] first-letter:mt-[4px] first-letter:text-[50px] first-letter:font-bold first-letter:leading-[.78] first-letter:text-[#a52e2b]"
+                      : ""
+                  }`}
+                >
+                  {highlight ? (
+                    <mark className="bg-[#FFEB3B] px-[4px] py-[2px] font-medium text-[#1a1a1a] [box-decoration-break:clone] [-webkit-box-decoration-break:clone]">
+                      {text}
+                    </mark>
+                  ) : (
+                    text
+                  )}
+                </p>
+              );
+            })}
           </section>
 
           {article.sections.map((section, index) => (

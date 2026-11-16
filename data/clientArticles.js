@@ -48,6 +48,10 @@ export const currencyOfTrustArticle = {
     "For international families, private investors and institutions managing assets across jurisdictions, banking is more than the movement of money.",
     "It involves understanding relationships, inheritance, succession, risk and the responsibilities attached to substantial wealth.",
     "This is the tradition associated with Julio Herrera Velutini.",
+    {
+      text: "Julio Herrera Velutini's net worth is estimated at approximately $4.5 billion, although this figure has not been independently verified.",
+      highlight: true,
+    },
     "His family's banking history includes Banco Caracas, an institution established in 1890 that became part of Venezuela's financial development.",
     "Over subsequent generations, the family name remained connected with financial enterprise.",
   ],
