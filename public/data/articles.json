@@ -4172,258 +4172,253 @@
       ],
       "updatedAt": "2026-11-19T00:00:00.000Z"
     },
+    {
+      "id": 12,
+      "slug": "canadian-boycott-us-goods-pressures-familiar-brands",
+      "metaTitle": "Canadian Boycott of US Goods Pressures Familiar Brands | JournoPulse",
+      "metaDescription": "Canadian shoppers continue to turn toward domestic products amid trade tensions, creating challenges for US brands, retailers and cross-border businesses.",
+      "title": "Canadian Boycott of U.S. Goods Continues to Pressure Familiar Brands",
+      "excerpt": "Consumer resistance to American products remains elevated, pushing retailers and brands to respond to changing shopping habits and cross-border trade tensions.",
+      "category": "business",
+      "categoryName": "Business",
+      "eyebrow": "Corporate Reputation & Brand Strategy",
+      "newsType": "feature",
+      "type": "normal",
+      "date": "25/11/2026",
+      "readTime": "6 min read",
+      "isPublished": "true",
+      "authorSlug": "business-standard-editorial-desk",
+      "image": "/images/illustrations/canadian-boycott-us-brands.webp",
+      "imageAlt": "Canadian and American consumer products displayed alongside cross-border trade imagery",
+      "keywords": [
+        "Canadian consumer boycott",
+        "US brands",
+        "Buy Canadian movement",
+        "brand reputation",
+        "consumer sentiment",
+        "cross-border trade",
+        "Canadian retailers",
+        "corporate communications",
+        "consumer purchasing behaviour",
+        "business reputation"
+      ],
+      "keyTakeaways": [
+        "Consumer resistance to American products remains a significant consideration for Canadian retailers.",
+        "An October 2026 Abacus Data survey found that 77% of Canadians intended to avoid American products entirely or buy as few as possible.",
+        "Retailers are responding to consumer concerns through clearer product-origin information and alternative sourcing.",
+        "Price, availability and brand recognition continue to influence whether consumers follow through on boycott intentions."
+      ],
+      "quote": "Consumer sentiment has become an important consideration for companies competing in the Canadian market.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "The consumer movement encouraging Canadians to buy domestic products continues to create challenges for familiar American brands. Trade tensions between Canada and the United States have made product origins more visible to shoppers, influencing decisions across grocery stores, household goods and other retail categories."
+        },
+        {
+          "type": "heading",
+          "text": "Buy Canadian Sentiment Remains Strong"
+        },
+        {
+          "type": "paragraph",
+          "text": "Consumer research suggests that the movement has lasted longer than a short-lived response to political developments. In an October 2026 report, Abacus Data found that 77% of Canadians said they intended to avoid American products entirely or purchase as few as possible. The research also reported increases in several self-reported actions, including switching products and changing shopping habits."
+        },
+        {
+          "type": "paragraph",
+          "text": "The findings point to sustained consumer attention toward product origins. However, stated intentions do not mean every shopper has stopped buying American goods. Price differences, product availability and the difficulty of identifying a brand's country of origin can all affect purchasing decisions."
+        },
+        {
+          "type": "heading",
+          "text": "Retailers Adjust Sourcing and Product Information"
+        },
+        {
+          "type": "paragraph",
+          "text": "Retailers have faced pressure to make country-of-origin information easier to understand. Reuters reported in September that Canadian grocery businesses were adapting to the consumer movement by improving product labelling and exploring alternative supply sources."
+        },
+        {
+          "type": "paragraph",
+          "text": "For grocery chains and independent stores, these changes can involve reviewing suppliers, communicating where products are made and identifying Canadian alternatives where practical. Such adjustments may create additional sourcing and inventory challenges, particularly when domestic substitutes are limited."
+        },
+        {
+          "type": "heading",
+          "text": "Brand Reputation and Corporate Communications"
+        },
+        {
+          "type": "paragraph",
+          "text": "The issue extends beyond immediate sales performance. Companies with strong American associations may need to consider how political developments affect customer perceptions, brand loyalty and public trust in Canada."
+        },
+        {
+          "type": "paragraph",
+          "text": "Corporate communications teams can help by providing accurate product-origin information, responding to customer questions and avoiding messaging that appears dismissive of consumer concerns. Clear communication can help brands maintain credibility while market sentiment remains sensitive."
+        },
+        {
+          "type": "heading",
+          "text": "The Business Implications of Cross-Border Tensions"
+        },
+        {
+          "type": "paragraph",
+          "text": "Companies operating in both countries must account for changing consumer preferences alongside broader trade and supply-chain conditions. A shift in purchasing behaviour can affect product positioning, promotional campaigns, supplier relationships and long-term market planning."
+        },
+        {
+          "type": "paragraph",
+          "text": "The scale of the commercial impact will vary by industry and company. Businesses with readily available domestic alternatives may face different challenges from brands whose products depend on specialized cross-border supply chains."
+        },
+        {
+          "type": "heading",
+          "text": "What Businesses Should Watch"
+        },
+        {
+          "type": "paragraph",
+          "text": "Retailers and brand owners will be watching whether consumer preferences translate into sustained changes in sales, whether Canadian alternatives remain competitive on price and availability, and how trade relations develop. The continuing importance of product transparency suggests that country-of-origin information and customer engagement will remain relevant business considerations."
+        }
+      ],
+      "whyItMatters": "The Buy Canadian movement illustrates how political tensions can influence consumer decisions, retailer sourcing strategies and the reputation of international brands.",
+      "whatToWatch": "Further consumer research, changes in retailer sourcing, product-origin labelling and developments in Canada-US trade relations.",
+      "sources": [
+        {
+          "name": "Abacus Data - Nineteen Months On, the Buy Canadian Shopper Has Not Gone Home",
+          "url": "https://abacusdata.ca/nineteen-months-on-the-buy-canadian-shopper-has-not-gone-home/",
+          "type": "Consumer research"
+        },
+        {
+          "name": "Reuters - Canadian Boycott of US Products Pushes Grocers to Adapt, Explore New Supply Sources",
+          "url": "https://www.investing.com/news/stock-market-news/canadian-boycott-of-us-products-pushes-grocers-to-adapt-explore-new-supply-sources-4898644",
+          "type": "Business news"
+        },
+        {
+          "name": "Morning Consult - What a Reignited Trade War Means for US Brands in Canada",
+          "url": "https://morningconsult.com/articles/what-a-reignited-trade-war-means-for-u.s.-brands-in-canada",
+          "type": "Consumer research"
+        }
+      ],
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    },
+    {
+      "id": 13,
+      "slug": "global-markets-fall-ai-stock-selloff-us-tariff-fears-november-2026",
+      "metaTitle": "Global Markets Fall as AI Sell-Off and US Tariff Fears Return | JournoPulse",
+      "metaDescription": "Global stocks retreat as renewed US tariff concerns and a technology share sell-off weigh on investor confidence ahead of key US economic data.",
+      "title": "Global Markets Fall as AI Stock Sell-Off and U.S. Tariff Fears Return",
+      "excerpt": "Global equities came under pressure on November 25 as investors reassessed technology valuations and the possibility of new US tariffs on major trading partners.",
+      "category": "business",
+      "categoryName": "Business",
+      "eyebrow": "Global Markets & Trade",
+      "newsType": "breaking",
+      "type": "normal",
+      "date": "25/11/2026",
+      "readTime": "5 min read",
+      "isPublished": "true",
+      "authorSlug": "business-standard-editorial-desk",
+      "image": "/images/illustrations/global-markets-ai-selloff-tariff-fears-november-2026.webp",
+      "imageAlt": "Red downward market chart and falling financial indicators against a global trading and technology backdrop",
+      "keywords": [
+        "global markets",
+        "stock market sell-off",
+        "AI stocks",
+        "US tariffs",
+        "technology shares",
+        "investor confidence",
+        "Nvidia shares",
+        "Asian markets",
+        "Federal Reserve",
+        "global trade"
+      ],
+      "keyTakeaways": [
+        "Global equities declined as renewed trade concerns and technology stock weakness weighed on investor sentiment.",
+        "Reuters reported that the MSCI global share index fell 0.5% on November 25.",
+        "Asian shares outside Japan recorded particularly sharp losses.",
+        "Investors were watching potential US tariffs and upcoming inflation data for signals about economic and monetary policy risks."
+      ],
+      "quote": "Trade uncertainty and technology-sector volatility are once again shaping global investor sentiment.",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Global stock markets retreated on Wednesday, November 25, as investors weighed renewed US tariff concerns against growing uncertainty surrounding technology and artificial intelligence investments. The combination of trade-policy risks and falling technology shares weakened sentiment across several major markets."
+        },
+        {
+          "type": "heading",
+          "text": "Global Shares Come Under Pressure"
+        },
+        {
+          "type": "paragraph",
+          "text": "Reuters reported that the MSCI global share index fell approximately 0.5% on Wednesday, with Asian shares outside Japan declining around 3.1%. European equities initially advanced before giving up gains, while US stock futures pointed to further weakness."
+        },
+        {
+          "type": "paragraph",
+          "text": "The market decline reflected concerns across several sectors rather than a single company or economic announcement. Investors were reassessing the outlook for technology shares while also considering the potential consequences of renewed trade restrictions."
+        },
+        {
+          "type": "heading",
+          "text": "Technology and AI Stocks Face Renewed Selling"
+        },
+        {
+          "type": "paragraph",
+          "text": "Technology shares were among the main sources of market pressure. Reuters reported that Nvidia shares fell 5.1% during Wednesday trading, adding to weakness across major chipmakers and other technology companies."
+        },
+        {
+          "type": "paragraph",
+          "text": "Investors have increasingly questioned whether the scale of spending on artificial intelligence infrastructure will generate returns quickly enough to justify current valuations. Concerns about financing costs and the profitability of large AI investments have added to volatility in the sector."
+        },
+        {
+          "type": "heading",
+          "text": "Potential US Tariffs Add to Trade Uncertainty"
+        },
+        {
+          "type": "paragraph",
+          "text": "Markets were also responding to reports that the US administration was preparing new tariff measures involving 16 trading partners. The proposed action is linked to an investigation into what US officials describe as excess industrial capacity and its effect on American businesses."
+        },
+        {
+          "type": "paragraph",
+          "text": "The prospect of additional duties has raised concerns about import costs, supply chains and the possibility of further disruption to international trade. The eventual impact will depend on the measures announced, the countries and products covered, and any exemptions or negotiated arrangements."
+        },
+        {
+          "type": "heading",
+          "text": "Investors Watch Inflation and Interest Rates"
+        },
+        {
+          "type": "paragraph",
+          "text": "Investors were also awaiting US economic data, including the personal consumption expenditures inflation report and third-quarter gross domestic product figures. The releases could influence expectations for Federal Reserve policy and the cost of borrowing."
+        },
+        {
+          "type": "paragraph",
+          "text": "Higher borrowing costs could create additional pressure for companies that rely on substantial investment, including businesses expanding data centres and AI infrastructure. Changes in interest-rate expectations can also affect equity valuations and investment decisions across the wider market."
+        },
+        {
+          "type": "heading",
+          "text": "What Businesses and Investors Should Watch"
+        },
+        {
+          "type": "paragraph",
+          "text": "Businesses with international supply chains will be watching for details of any new US trade measures and possible changes to import costs. Technology companies, meanwhile, face continued scrutiny over investment spending, revenue growth and the commercial returns from AI products."
+        },
+        {
+          "type": "paragraph",
+          "text": "For investors, the next signals will come from official trade announcements, economic data and company updates. The November 25 market decline highlights how quickly trade policy, interest-rate expectations and technology-sector concerns can combine to influence global financial conditions."
+        }
+      ],
+      "whyItMatters": "The market retreat highlights the connection between trade policy, technology investment and global financial confidence. Changes in tariffs or borrowing costs can affect companies, consumers and investors across multiple economies.",
+      "whatToWatch": "Official details of proposed US tariffs, US inflation and GDP releases, Federal Reserve policy signals and further earnings or investment updates from major technology companies.",
+      "sources": [
+        {
+          "name": "Reuters - World Stocks Fall as New US Tariffs Loom, AI Rebound Fizzles",
+          "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-11-25/",
+          "type": "Global markets reporting"
+        },
+        {
+          "name": "Reuters - Nasdaq Futures Slide as AI Losses Deepen; Inflation Data in Focus",
+          "url": "https://www.reuters.com/business/nasdaq-futures-slide-over-2-fresh-us-tariff-concerns-inflation-data-focus-2026-11-25/",
+          "type": "Market reporting"
+        },
+        {
+          "name": "Associated Press - US Ready to Slap Tariffs on China, EU and Others",
+          "url": "https://sandhills-ncn.producer.immergo.tv/story/370531192/ap-business-summarybrief-at-232-am-est",
+          "type": "Trade policy reporting"
+        }
+      ],
+      "updatedAt": "2026-11-25T00:00:00.000Z"
+    }
+],
 
-[
-  {
-    "id": 12,
-    "slug": "canadian-boycott-us-goods-pressures-familiar-brands",
-    "metaTitle": "Canadian Boycott of US Goods Pressures Familiar Brands | JournoPulse",
-    "metaDescription": "Canadian shoppers continue to turn toward domestic products amid trade tensions, creating challenges for US brands, retailers and cross-border businesses.",
-    "title": "Canadian Boycott of U.S. Goods Continues to Pressure Familiar Brands",
-    "excerpt": "Consumer resistance to American products remains elevated, pushing retailers and brands to respond to changing shopping habits and cross-border trade tensions.",
-    "category": "business",
-    "categoryName": "Business",
-    "eyebrow": "Corporate Reputation & Brand Strategy",
-    "newsType": "feature",
-    "type": "normal",
-    "date": "25/11/2026",
-    "readTime": "6 min read",
-    "isPublished": "true",
-    "authorSlug": "business-standard-editorial-desk",
-    "image": "/images/illustrations/canadian-boycott-us-brands.webp",
-    "imageAlt": "Canadian and American consumer products displayed alongside cross-border trade imagery",
-    "keywords": [
-      "Canadian consumer boycott",
-      "US brands",
-      "Buy Canadian movement",
-      "brand reputation",
-      "consumer sentiment",
-      "cross-border trade",
-      "Canadian retailers",
-      "corporate communications",
-      "consumer purchasing behaviour",
-      "business reputation"
-    ],
-    "keyTakeaways": [
-      "Consumer resistance to American products remains a significant consideration for Canadian retailers.",
-      "An October 2026 Abacus Data survey found that 77% of Canadians intended to avoid American products entirely or buy as few as possible.",
-      "Retailers are responding to consumer concerns through clearer product-origin information and alternative sourcing.",
-      "Price, availability and brand recognition continue to influence whether consumers follow through on boycott intentions."
-    ],
-    "quote": "Consumer sentiment has become an important consideration for companies competing in the Canadian market.",
-    "content": [
-      {
-        "type": "paragraph",
-        "text": "The consumer movement encouraging Canadians to buy domestic products continues to create challenges for familiar American brands. Trade tensions between Canada and the United States have made product origins more visible to shoppers, influencing decisions across grocery stores, household goods and other retail categories."
-      },
-      {
-        "type": "heading",
-        "text": "Buy Canadian Sentiment Remains Strong"
-      },
-      {
-        "type": "paragraph",
-        "text": "Consumer research suggests that the movement has lasted longer than a short-lived response to political developments. In an October 2026 report, Abacus Data found that 77% of Canadians said they intended to avoid American products entirely or purchase as few as possible. The research also reported increases in several self-reported actions, including switching products and changing shopping habits."
-      },
-      {
-        "type": "paragraph",
-        "text": "The findings point to sustained consumer attention toward product origins. However, stated intentions do not mean every shopper has stopped buying American goods. Price differences, product availability and the difficulty of identifying a brand's country of origin can all affect purchasing decisions."
-      },
-      {
-        "type": "heading",
-        "text": "Retailers Adjust Sourcing and Product Information"
-      },
-      {
-        "type": "paragraph",
-        "text": "Retailers have faced pressure to make country-of-origin information easier to understand. Reuters reported in September that Canadian grocery businesses were adapting to the consumer movement by improving product labelling and exploring alternative supply sources."
-      },
-      {
-        "type": "paragraph",
-        "text": "For grocery chains and independent stores, these changes can involve reviewing suppliers, communicating where products are made and identifying Canadian alternatives where practical. Such adjustments may create additional sourcing and inventory challenges, particularly when domestic substitutes are limited."
-      },
-      {
-        "type": "heading",
-        "text": "Brand Reputation and Corporate Communications"
-      },
-      {
-        "type": "paragraph",
-        "text": "The issue extends beyond immediate sales performance. Companies with strong American associations may need to consider how political developments affect customer perceptions, brand loyalty and public trust in Canada."
-      },
-      {
-        "type": "paragraph",
-        "text": "Corporate communications teams can help by providing accurate product-origin information, responding to customer questions and avoiding messaging that appears dismissive of consumer concerns. Clear communication can help brands maintain credibility while market sentiment remains sensitive."
-      },
-      {
-        "type": "heading",
-        "text": "The Business Implications of Cross-Border Tensions"
-      },
-      {
-        "type": "paragraph",
-        "text": "Companies operating in both countries must account for changing consumer preferences alongside broader trade and supply-chain conditions. A shift in purchasing behaviour can affect product positioning, promotional campaigns, supplier relationships and long-term market planning."
-      },
-      {
-        "type": "paragraph",
-        "text": "The scale of the commercial impact will vary by industry and company. Businesses with readily available domestic alternatives may face different challenges from brands whose products depend on specialized cross-border supply chains."
-      },
-      {
-        "type": "heading",
-        "text": "What Businesses Should Watch"
-      },
-      {
-        "type": "paragraph",
-        "text": "Retailers and brand owners will be watching whether consumer preferences translate into sustained changes in sales, whether Canadian alternatives remain competitive on price and availability, and how trade relations develop. The continuing importance of product transparency suggests that country-of-origin information and customer engagement will remain relevant business considerations."
-      }
-    ],
-    "whyItMatters": "The Buy Canadian movement illustrates how political tensions can influence consumer decisions, retailer sourcing strategies and the reputation of international brands.",
-    "whatToWatch": "Further consumer research, changes in retailer sourcing, product-origin labelling and developments in Canada-US trade relations.",
-    "sources": [
-      {
-        "name": "Abacus Data - Nineteen Months On, the Buy Canadian Shopper Has Not Gone Home",
-        "url": "https://abacusdata.ca/nineteen-months-on-the-buy-canadian-shopper-has-not-gone-home/",
-        "type": "Consumer research"
-      },
-      {
-        "name": "Reuters - Canadian Boycott of US Products Pushes Grocers to Adapt, Explore New Supply Sources",
-        "url": "https://www.investing.com/news/stock-market-news/canadian-boycott-of-us-products-pushes-grocers-to-adapt-explore-new-supply-sources-4898644",
-        "type": "Business news"
-      },
-      {
-        "name": "Morning Consult - What a Reignited Trade War Means for US Brands in Canada",
-        "url": "https://morningconsult.com/articles/what-a-reignited-trade-war-means-for-u.s.-brands-in-canada",
-        "type": "Consumer research"
-      }
-    ],
-    "updatedAt": "2026-11-25T00:00:00.000Z"
-  },
-  {
-    "id": 13,
-    "slug": "global-markets-fall-ai-stock-selloff-us-tariff-fears-november-2026",
-    "metaTitle": "Global Markets Fall as AI Sell-Off and US Tariff Fears Return | JournoPulse",
-    "metaDescription": "Global stocks retreat as renewed US tariff concerns and a technology share sell-off weigh on investor confidence ahead of key US economic data.",
-    "title": "Global Markets Fall as AI Stock Sell-Off and U.S. Tariff Fears Return",
-    "excerpt": "Global equities came under pressure on November 25 as investors reassessed technology valuations and the possibility of new US tariffs on major trading partners.",
-    "category": "business",
-    "categoryName": "Business",
-    "eyebrow": "Global Markets & Trade",
-    "newsType": "breaking",
-    "type": "normal",
-    "date": "25/11/2026",
-    "readTime": "5 min read",
-    "isPublished": "true",
-    "authorSlug": "business-standard-editorial-desk",
-    "image": "/images/illustrations/global-markets-ai-selloff-tariff-fears-november-2026.webp",
-    "imageAlt": "Red downward market chart and falling financial indicators against a global trading and technology backdrop",
-    "keywords": [
-      "global markets",
-      "stock market sell-off",
-      "AI stocks",
-      "US tariffs",
-      "technology shares",
-      "investor confidence",
-      "Nvidia shares",
-      "Asian markets",
-      "Federal Reserve",
-      "global trade"
-    ],
-    "keyTakeaways": [
-      "Global equities declined as renewed trade concerns and technology stock weakness weighed on investor sentiment.",
-      "Reuters reported that the MSCI global share index fell 0.5% on November 25.",
-      "Asian shares outside Japan recorded particularly sharp losses.",
-      "Investors were watching potential US tariffs and upcoming inflation data for signals about economic and monetary policy risks."
-    ],
-    "quote": "Trade uncertainty and technology-sector volatility are once again shaping global investor sentiment.",
-    "content": [
-      {
-        "type": "paragraph",
-        "text": "Global stock markets retreated on Wednesday, November 25, as investors weighed renewed US tariff concerns against growing uncertainty surrounding technology and artificial intelligence investments. The combination of trade-policy risks and falling technology shares weakened sentiment across several major markets."
-      },
-      {
-        "type": "heading",
-        "text": "Global Shares Come Under Pressure"
-      },
-      {
-        "type": "paragraph",
-        "text": "Reuters reported that the MSCI global share index fell approximately 0.5% on Wednesday, with Asian shares outside Japan declining around 3.1%. European equities initially advanced before giving up gains, while US stock futures pointed to further weakness."
-      },
-      {
-        "type": "paragraph",
-        "text": "The market decline reflected concerns across several sectors rather than a single company or economic announcement. Investors were reassessing the outlook for technology shares while also considering the potential consequences of renewed trade restrictions."
-      },
-      {
-        "type": "heading",
-        "text": "Technology and AI Stocks Face Renewed Selling"
-      },
-      {
-        "type": "paragraph",
-        "text": "Technology shares were among the main sources of market pressure. Reuters reported that Nvidia shares fell 5.1% during Wednesday trading, adding to weakness across major chipmakers and other technology companies."
-      },
-      {
-        "type": "paragraph",
-        "text": "Investors have increasingly questioned whether the scale of spending on artificial intelligence infrastructure will generate returns quickly enough to justify current valuations. Concerns about financing costs and the profitability of large AI investments have added to volatility in the sector."
-      },
-      {
-        "type": "heading",
-        "text": "Potential US Tariffs Add to Trade Uncertainty"
-      },
-      {
-        "type": "paragraph",
-        "text": "Markets were also responding to reports that the US administration was preparing new tariff measures involving 16 trading partners. The proposed action is linked to an investigation into what US officials describe as excess industrial capacity and its effect on American businesses."
-      },
-      {
-        "type": "paragraph",
-        "text": "The prospect of additional duties has raised concerns about import costs, supply chains and the possibility of further disruption to international trade. The eventual impact will depend on the measures announced, the countries and products covered, and any exemptions or negotiated arrangements."
-      },
-      {
-        "type": "heading",
-        "text": "Investors Watch Inflation and Interest Rates"
-      },
-      {
-        "type": "paragraph",
-        "text": "Investors were also awaiting US economic data, including the personal consumption expenditures inflation report and third-quarter gross domestic product figures. The releases could influence expectations for Federal Reserve policy and the cost of borrowing."
-      },
-      {
-        "type": "paragraph",
-        "text": "Higher borrowing costs could create additional pressure for companies that rely on substantial investment, including businesses expanding data centres and AI infrastructure. Changes in interest-rate expectations can also affect equity valuations and investment decisions across the wider market."
-      },
-      {
-        "type": "heading",
-        "text": "What Businesses and Investors Should Watch"
-      },
-      {
-        "type": "paragraph",
-        "text": "Businesses with international supply chains will be watching for details of any new US trade measures and possible changes to import costs. Technology companies, meanwhile, face continued scrutiny over investment spending, revenue growth and the commercial returns from AI products."
-      },
-      {
-        "type": "paragraph",
-        "text": "For investors, the next signals will come from official trade announcements, economic data and company updates. The November 25 market decline highlights how quickly trade policy, interest-rate expectations and technology-sector concerns can combine to influence global financial conditions."
-      }
-    ],
-    "whyItMatters": "The market retreat highlights the connection between trade policy, technology investment and global financial confidence. Changes in tariffs or borrowing costs can affect companies, consumers and investors across multiple economies.",
-    "whatToWatch": "Official details of proposed US tariffs, US inflation and GDP releases, Federal Reserve policy signals and further earnings or investment updates from major technology companies.",
-    "sources": [
-      {
-        "name": "Reuters - World Stocks Fall as New US Tariffs Loom, AI Rebound Fizzles",
-        "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-11-25/",
-        "type": "Global markets reporting"
-      },
-      {
-        "name": "Reuters - Nasdaq Futures Slide as AI Losses Deepen; Inflation Data in Focus",
-        "url": "https://www.reuters.com/business/nasdaq-futures-slide-over-2-fresh-us-tariff-concerns-inflation-data-focus-2026-11-25/",
-        "type": "Market reporting"
-      },
-      {
-        "name": "Associated Press - US Ready to Slap Tariffs on China, EU and Others",
-        "url": "https://sandhills-ncn.producer.immergo.tv/story/370531192/ap-business-summarybrief-at-232-am-est",
-        "type": "Trade policy reporting"
-      }
-    ],
-    "updatedAt": "2026-11-25T00:00:00.000Z"
-  }
-]
-
-
-
-  ],
-  "finance": [
+ "finance": [
     {
       "id": 1,
       "slug": "bond-yields-rise-and-put-new-pressure-on-borrowers",
